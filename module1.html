@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: AI Ethics Foundations - University of St. Thomas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-purple-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://www.stthomas.edu/media/universityrelations/graphics/logos/ustwordmark/UST-Wordmark-Primary-Purple.png" alt="University of St. Thomas Logo" class="h-10 mr-3">
+                    <div>
+                        <h1 class="text-2xl font-bold">AI Ethics Course</h1>
+                        <p class="text-sm">75-Minute Micro-Credential</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="hover:text-purple-200">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-purple-200">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-purple-200">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-purple-200">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-purple-200">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="md:col-span-1">
+                <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                    <h3 class="text-xl font-bold mb-4 text-purple-800">Module Navigation</h3>
+                    <ul class="space-y-2">
+                        <li class="bg-purple-100 rounded p-2 font-semibold">
+                            <a href="module1.html" class="block">Module 1: AI Ethics Foundations</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module2.html" class="block">Module 2: AI Risks, Biases, and Privacy</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module3.html" class="block">Module 3: AI Sustainability and Environmental Impact</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module4.html" class="block">Module 4: Responsible AI Integration</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module5.html" class="block">Module 5: Creating an AI Ethics Action Plan</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                    <h3 class="text-lg font-semibold mb-2">Module Resources</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a 
+                                href="https://er.educause.edu/articles/2025/1/generative-artificial-intelligence-and-education-a-brief-ethical-reflection-on-autonomy" 
+                                target="_blank"
+                                class="text-blue-600 hover:underline flex items-center"
+                            >
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                                EDUCAUSE: AI and Autonomy
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="https://fdc.fullerton.edu/_resources/pdfs/teaching/ethical-principles-ai-framework-for-higher-education-february-2025.pdf" 
+                                target="_blank"
+                                class="text-blue-600 hover:underline flex items-center"
+                            >
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                                Ethical Principles Framework
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="https://edtechmagazine.com/higher/article/2025/03/ai-ethics-higher-education-how-schools-are-proceeding-perfcon" 
+                                target="_blank"
+                                class="text-blue-600 hover:underline flex items-center"
+                            >
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                                AI Ethics in Higher Education
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="md:col-span-3">
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h1 class="text-3xl font-bold mb-2">Module 1: AI Ethics Foundations</h1>
+                    <div class="text-sm text-gray-500 mb-4">Estimated time: 15 minutes</div>
+                    
+                    <div class="mb-6">
+                        <h2 class="text-xl font-semibold mb-2">Learning Objectives</h2>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Understand key ethical principles relevant to AI in higher education</li>
+                            <li>Identify major AI ethics frameworks and their applications</li>
+                            <li>Recognize ethical challenges specific to AI use in educational contexts</li>
+                            <li>Apply ethical reasoning to AI implementation decisions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4">Ethical Foundations for AI in Higher Education</h2>
+                        
+                        <p class="mb-4">
+                            Artificial intelligence technologies are transforming higher education, offering new possibilities for personalized learning, administrative efficiency, and research innovation. However, these powerful tools also raise significant ethical questions that must be carefully addressed to ensure they align with educational values and promote the well-being of all stakeholders.
+                        </p>
+                        
+                        <div class="my-6">
+                            <div class="aspect-w-16 aspect-h-9">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Introduction to AI Ethics in Higher Education" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-64 rounded"></iframe>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-2">Introduction to AI Ethics in Higher Education</p>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Core Ethical Principles for AI</h3>
+                        
+                        <p class="mb-4">
+                            Several fundamental ethical principles provide a foundation for evaluating and guiding AI implementation in educational settings:
+                        </p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Beneficence and Non-maleficence</h4>
+                                <p>
+                                    AI systems should be designed and implemented to benefit educational stakeholders and avoid causing harm. This includes considering both intended and unintended consequences of AI applications, with special attention to potential impacts on vulnerable populations.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Autonomy and Informed Consent</h4>
+                                <p>
+                                    Individuals should maintain meaningful control over AI systems that affect them, with transparent information about how these systems work and the ability to make informed choices about their use. In educational contexts, this includes respecting faculty academic freedom and student agency.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Justice and Fairness</h4>
+                                <p>
+                                    AI systems should be designed to promote equity and avoid perpetuating or amplifying biases. This includes ensuring fair distribution of both benefits and potential harms across different demographic groups and addressing algorithmic bias.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Transparency and Explainability</h4>
+                                <p>
+                                    AI systems should be transparent in their operation, with clear explanations of how they make decisions or recommendations. This is particularly important in educational settings where AI may influence significant decisions about student assessment or resource allocation.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Privacy and Data Protection</h4>
+                                <p>
+                                    AI systems should respect individual privacy and handle personal data responsibly. In educational contexts, this includes careful consideration of student data collection, storage, and use, with appropriate safeguards and compliance with relevant regulations.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Sustainability and Environmental Responsibility</h4>
+                                <p>
+                                    AI implementation should consider environmental impacts, including energy consumption and carbon footprint. Educational institutions have a responsibility to minimize the environmental costs of AI systems they deploy.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="my-6">
+                            <img src="https://www.stthomas.edu/media/schoolofengineering/images/AI-Ethics-Framework.jpg" alt="AI Ethics Framework" class="w-full rounded-lg">
+                            <p class="text-sm text-gray-500 mt-2">Comprehensive AI Ethics Framework for Higher Education</p>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Major AI Ethics Frameworks</h3>
+                        
+                        <p class="mb-4">
+                            Several established frameworks provide structured approaches to AI ethics that can be applied in higher education:
+                        </p>
+                        
+                        <div class="overflow-x-auto mb-6">
+                            <table class="min-w-full bg-white border border-gray-200">
+                                <thead>
+                                    <tr>
+                                        <th class="py-2 px-4 border-b">Framework</th>
+                                        <th class="py-2 px-4 border-b">Key Principles</th>
+                                        <th class="py-2 px-4 border-b">Educational Applications</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">UNESCO Recommendation on AI Ethics</td>
+                                        <td class="py-2 px-4 border-b">Human rights, inclusivity, fairness, transparency, safety</td>
+                                        <td class="py-2 px-4 border-b">Provides global standards for ethical AI in education with focus on inclusivity</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">EU AI Ethics Guidelines</td>
+                                        <td class="py-2 px-4 border-b">Human agency, robustness, privacy, transparency, diversity</td>
+                                        <td class="py-2 px-4 border-b">Offers risk-based approach to AI governance in educational settings</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">IEEE Ethically Aligned Design</td>
+                                        <td class="py-2 px-4 border-b">Human rights, well-being, data agency, effectiveness, transparency</td>
+                                        <td class="py-2 px-4 border-b">Provides technical standards for ethical AI design in educational tools</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">ISTE AI in Education Guidelines</td>
+                                        <td class="py-2 px-4 border-b">Student-centered, equity, transparency, safety, human oversight</td>
+                                        <td class="py-2 px-4 border-b">Specifically designed for K-12 and higher education contexts</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Ethical Challenges in Educational AI</h3>
+                        
+                        <p class="mb-4">
+                            Higher education faces several unique ethical challenges when implementing AI:
+                        </p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold mb-1">Academic Integrity and Assessment</h4>
+                                <p>
+                                    AI tools raise questions about what constitutes original student work and how to design authentic assessments in an era of AI-generated content.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h4 class="font-semibold mb-1">Algorithmic Decision-Making</h4>
+                                <p>
+                                    When AI systems influence decisions about admissions, course placement, or resource allocation, questions arise about fairness, transparency, and human oversight.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold mb-1">Student Data Privacy</h4>
+                                <p>
+                                    AI systems often require extensive data collection, raising concerns about student privacy, consent, and the potential for surveillance.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-yellow-500 pl-4">
+                                <h4 class="font-semibold mb-1">Digital Divide and Access</h4>
+                                <p>
+                                    Unequal access to AI tools and technologies can exacerbate existing educational inequities and create new forms of disadvantage.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-red-500 pl-4">
+                                <h4 class="font-semibold mb-1">Academic Freedom and Faculty Autonomy</h4>
+                                <p>
+                                    AI implementation decisions may impact faculty control over curriculum, teaching methods, and assessment, raising questions about academic freedom.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                            <h4 class="font-semibold mb-2">Case Example: AI-Powered Admissions</h4>
+                            <p class="mb-3">
+                                A university is considering implementing an AI system to help screen initial applications to identify promising candidates. The system would be trained on historical admissions data to predict which applicants are likely to succeed at the institution.
+                            </p>
+                            <p>
+                                <strong>Ethical Analysis:</strong> This case raises several ethical considerations. If historical data reflects past biases in admissions decisions, the AI system might perpetuate or amplify these biases. There are also questions about transparency (can applicants understand how decisions are made?), human oversight (what role do admissions officers play in the process?), and fairness (does the system disadvantage certain groups of applicants?). A responsible implementation would include bias testing, transparent disclosure to applicants, meaningful human oversight, and regular auditing of outcomes across demographic groups.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4">Module Assessment</h2>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-4">Knowledge Check</h3>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <p class="font-medium mb-2">1. Which of the following is NOT typically considered a core ethical principle for AI in education?</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1a" name="q1" class="mr-2">
+                                            <label for="q1a">Transparency</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1b" name="q1" class="mr-2">
+                                            <label for="q1b">Efficiency</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1c" name="q1" class="mr-2">
+                                            <label for="q1c">Justice and Fairness</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1d" name="q1" class="mr-2">
+                                            <label for="q1d">Privacy</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-500">
+                                        Correct Answer: Efficiency. While efficiency is a desirable quality, it is not typically considered a core ethical principle for AI, unlike transparency, justice/fairness, and privacy.
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <p class="font-medium mb-2">2. Which ethical principle is most directly concerned with ensuring AI systems do not perpetuate or amplify existing biases?</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2a" name="q2" class="mr-2">
+                                            <label for="q2a">Autonomy</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2b" name="q2" class="mr-2">
+                                            <label for="q2b">Justice and Fairness</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2c" name="q2" class="mr-2">
+                                            <label for="q2c">Transparency</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2d" name="q2" class="mr-2">
+                                            <label for="q2d">Beneficence</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-500">
+                                        Correct Answer: Justice and Fairness. This principle specifically addresses the equitable treatment of different groups and the prevention of bias in AI systems.
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <p class="font-medium mb-2">3. In the context of AI ethics, what does "explainability" refer to?</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3a" name="q3" class="mr-2">
+                                            <label for="q3a">The ability to justify why AI was chosen for a particular task</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3b" name="q3" class="mr-2">
+                                            <label for="q3b">The ability to understand and articulate how an AI system reaches its decisions</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3c" name="q3" class="mr-2">
+                                            <label for="q3c">The requirement to explain AI concepts to non-technical stakeholders</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3d" name="q3" class="mr-2">
+                                            <label for="q3d">The process of documenting AI system failures</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-500">
+                                        Correct Answer: The ability to understand and articulate how an AI system reaches its decisions. Explainability refers to making AI decision-making processes transparent and understandable to humans.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <button class="px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800">Submit Answers</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8 pt-4 border-t border-gray-200">
+                        <a 
+                            href="modules.html" 
+                            class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 flex items-center"
+                        >
+                            <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                            </svg>
+                            Back to Modules
+                        </a>
+                        <a 
+                            href="module2.html" 
+                            class="px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800 flex items-center"
+                        >
+                            Next Module
+                            <svg class="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About This Course</h3>
+                    <p class="text-gray-300">
+                        This AI Ethics micro-credential course was developed for the University of St. Thomas to provide faculty and staff with essential knowledge and tools for ethical AI implementation.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-white">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-white">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-300">
+                        University of St. Thomas<br>
+                        2115 Summit Avenue<br>
+                        St. Paul, MN 55105<br>
+                        <a href="mailto:aiethics@stthomas.edu" class="hover:text-white">aiethics@stthomas.edu</a>
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 University of St. Thomas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

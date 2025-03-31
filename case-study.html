@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: AI Implementation Ethics - University of St. Thomas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .case-study-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .scenario {
+            border-left: 4px solid #8b5cf6;
+            padding-left: 1.5rem;
+        }
+        .decision-point {
+            background-color: #f3f4f6;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+        .option {
+            padding: 1rem;
+            margin: 0.75rem 0;
+            border-radius: 0.375rem;
+            border: 1px solid #d1d5db;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .option:hover {
+            background-color: #e5e7eb;
+        }
+        .option.selected {
+            background-color: #dbeafe;
+            border: 1px solid #3b82f6;
+        }
+        .consequence {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            display: none;
+        }
+        .consequence.positive {
+            background-color: #d1fae5;
+            border-left: 4px solid #10b981;
+        }
+        .consequence.mixed {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+        }
+        .consequence.negative {
+            background-color: #fee2e2;
+            border-left: 4px solid #ef4444;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-purple-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://www.stthomas.edu/media/universityrelations/graphics/logos/ustwordmark/UST-Wordmark-Primary-Purple.png" alt="University of St. Thomas Logo" class="h-10 mr-3">
+                    <div>
+                        <h1 class="text-2xl font-bold">AI Ethics Course</h1>
+                        <p class="text-sm">75-Minute Micro-Credential</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="hover:text-purple-200">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-purple-200">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-purple-200 font-semibold">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-purple-200">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-purple-200">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold mb-2">Interactive Case Study: Implementing AI in Higher Education</h1>
+            <p class="text-gray-600 mb-4">
+                This interactive case study presents a scenario about implementing AI in a higher education setting. 
+                You'll be asked to make decisions at key points, and see the consequences of your choices.
+            </p>
+            
+            <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                <h2 class="text-lg font-semibold mb-2 text-blue-800">Instructions</h2>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Read the scenario carefully</li>
+                    <li>Consider the ethical implications of each decision point</li>
+                    <li>Select the option you believe is most appropriate</li>
+                    <li>Review the consequences of your decision</li>
+                    <li>Continue through the case study to see how your decisions impact the outcome</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="case-study-container">
+            <div id="case-study">
+                <!-- Introduction -->
+                <div id="introduction">
+                    <h2 class="text-2xl font-semibold mb-4">Case Study: Implementing AI at Lakeside University</h2>
+                    
+                    <div class="scenario mb-6">
+                        <h3 class="text-xl font-medium mb-3">Background</h3>
+                        <p class="mb-3">
+                            Lakeside University, a mid-sized private institution with 8,000 students, is considering implementing an AI-powered student success system. The system would analyze student data to identify those at risk of academic difficulties and suggest interventions. The university administration believes this could improve retention rates and student outcomes.
+                        </p>
+                        <p class="mb-3">
+                            You are the chair of the newly formed AI Ethics Committee, tasked with guiding the ethical implementation of this system. The university has already received proposals from three vendors and is eager to move forward quickly.
+                        </p>
+                        <p>
+                            The proposed AI system would collect and analyze various data points including:
+                        </p>
+                        <ul class="list-disc pl-8 my-3 space-y-1">
+                            <li>Academic performance (grades, attendance, assignment completion)</li>
+                            <li>Learning management system activity (login frequency, time spent on materials)</li>
+                            <li>Library and resource usage</li>
+                            <li>Student demographic information</li>
+                            <li>Financial aid status</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Decision Point 1 -->
+                    <div class="decision-point" id="decision-1">
+                        <h3 class="text-xl font-medium mb-3">Decision Point 1: Initial Approach</h3>
+                        <p class="mb-4">
+                            The university president has asked for your committee's recommendation on how to proceed with the AI implementation. What approach do you recommend?
+                        </p>
+                        
+                        <div class="options">
+                            <div class="option" data-value="a" onclick="selectOption('decision-1', 'a')">
+                                <strong>Option A:</strong> Move forward quickly with implementation to stay competitive. Select the vendor with the most advanced AI capabilities and begin a pilot program next semester.
+                            </div>
+                            <div class="option" data-value="b" onclick="selectOption('decision-1', 'b')">
+                                <strong>Option B:</strong> Conduct a thorough needs assessment and stakeholder consultation before proceeding. Develop clear ethical guidelines and requirements for the AI system.
+                            </div>
+                            <div class="option" data-value="c" onclick="selectOption('decision-1', 'c')">
+                                <strong>Option C:</strong> Recommend against implementing the AI system due to potential ethical concerns around data privacy and algorithmic bias.
+                            </div>
+                        </div>
+                        
+                        <div class="consequence negative" id="consequence-1-a">
+                            <h4 class="font-semibold mb-2">Consequence:</h4>
+                            <p class="mb-3">
+                                The university quickly selects a vendor and implements a pilot program. However, without proper stakeholder consultation, the system faces significant resistance from faculty and students. Concerns about privacy, data usage, and the "black box" nature of the algorithm create distrust.
+                            </p>
+                            <p>
+                                Additionally, the rushed implementation means insufficient attention was paid to the environmental impact of the system. The vendor's solution uses a large, energy-intensive model hosted in a data center powered primarily by fossil fuels, significantly increasing the university's carbon footprint.
+                            </p>
+                            <button class="mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" onclick="showNextDecision('decision-1', 'decision-2-a')">
+                                Continue
+                            </button>
+                        </div>
+                        
+                        <div class="consequence positive" id="consequence-1-b">
+                            <h4 class="font-semibold mb-2">Consequence:</h4>
+                            <p class="mb-3">
+                                Your committee conducts a thorough needs assessment, consulting with students, faculty, staff, and administrators. This process reveals important considerations that hadn't been initially considered, including concerns about data privacy, algorithmic bias, and the need for human oversight.
+                            </p>
+                            <p class="mb-3">
+                                The committee develops a comprehensive set of ethical guidelines for AI implementation, including requirements for transparency, fairness, privacy protection, and sustainability considerations. These guidelines will be used to evaluate vendor proposals.
+                            </p>
+                            <p>
+                                The inclusive approach builds trust and buy-in from the university community, creating a strong foundation for successful implementation.
+                            </p>
+                            <button class="mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" onclick="showNextDecision('decision-1', 'decision-2-b')">
+                                Continue
+                            </button>
+                        </div>
+                        
+                        <div class="consequence mixed" id="consequence-1-c">
+                            <h4 class="font-semibold mb-2">Consequence:</h4>
+                            <p class="mb-3">
+                                The university administration is disappointed with your recommendation and questions the value of the ethics committee. They point out that many peer institutions are already implementing similar systems.
+                            </p>
+                            <p class="mb-3">
+                                While your concerns about ethical issues are valid, the complete rejection of AI implementation means missing potential benefits for student success. The administration decides to proceed anyway, but with limited input from your committee.
+                            </p>
+                            <p>
+                                This creates a challenging situation where you have limited influence over how the system is implemented, potentially leading to the very ethical issues you were concerned about.
+                            </p>
+                            <button class="mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" onclick="showNextDecision('decision-1', 'decision-2-c')">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Decision Point 2-A (follows from Option A in Decision 1) -->
+                    <div class="decision-point hidden" id="decision-2-a">
+                        <h3 class="text-xl font-medium mb-3">Decision Point 2: Addressing Implementation Challenges</h3>
+                        <p class="mb-4">
+                            Three months into the pilot, significant issues have emerged. Faculty are concerned about the "black box" nature of the algorithm, students are worried about privacy, and the system has shown bias against certain student groups. Additionally, the IT department has raised concerns about the high energy consumption of the AI system. How do you address these challenges?
+                        </p>
+                        
+                        <div class="options">
+                            <div class="option" data-value="a" onclick="selectOption('decision-2-a', 'a')">
+                                <strong>Option A:</strong> Continue with the current implementation but launch a communication campaign to explain the benefits of the system and address concerns.
+                            </div>
+                            <div class="option" data-value="b" onclick="selectOption('decision-2-a', 'b')">
+                                <strong>Option B:</strong> Pause the implementation, conduct a thorough review of the issues, and develop a revised approach that addresses the ethical concerns.
+                            </div>
+                            <div class="option" data-value="c" onclick="selectOption('decision-2-a', 'c')">
+                                <strong>Option C:</strong> Switch to a different vendor that offers more transparency, better bias mitigation, and more energy-efficient infrastructure.
+                            </div>
+                        </div>
+                        
+                        <div class="consequence negative" id="consequence-2-a-a">
+                            <h4 class="font-semibold mb-2">Consequence:</h4>
+                            <p class="mb-3">
+                                The communication campaign fails to address the substantive issues with the system. Faculty and student opposition grows, with some departments refusing to use the system altogether. The student government passes a resolution opposing the AI system.
+                            </p>
+                            <p class="mb-3">
+                                The bias issues persist, potentially creating legal liability for the university. The high energy consumption continues to increase the university's carbon footprint, contradicting its sustainability commitments.
+                            </p>
+                            <p>
+                                Eventually, the university is forced to abandon the system entirely, having wasted significant resources and damaged trust within the community.
+                            </p>
+                            <button class="mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" onclick="showConclusion('negative')">
+                                See Final Outcome
+                            </button>
+                        </div>
+                        
+                        <div class="consequence mixed" id="consequence-2-a-b">
+                            <h4 class="font-semibold mb-2">Consequence:</h4>
+                            <p class="mb-3">
+                                Pausing the implementation is met with mixed reactions. Some administrators are frustrated by the delay, but faculty and students appreciate the responsiveness to their concerns.
+                            </p>
+                            <p class="mb-3">
+                                The review process identifies significant issues with the current implementation, including algorithmic bias, lack of transparency, privacy concerns, and high energy consumption. Your committee develops a revised approach that addresses these issues.
+                            </p>
+                            <p>
+                                While this creates a setback in the timeline, it ultimately leads to a more ethical and sustainable implementation that has broader support from the university community.
+                            </p>
+                            <button class="mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" onclick="showConclusion('mixed')">
+                                See Final Outcome
+                            </button>
+                        </div>
+                        
+                        <div class="consequence mixed" id="consequence-2-a-c">
+                            <h4 class="font-semibold mb-2">Consequence:</h4>
+                            <p class="mb-3">
+                                Switching vendors is disruptive and costly, requiring data migration and retraining. Some administrators question whether the issues could have been avoided with better initial planning.
+                            </p>
+                            <p class="mb-3">
+                                The new vendor offers more transparency and better bias mitigation, which helps address some of the ethical concerns. Their system also uses more energy-efficient infrastructure, reducing the environmental impact.
+                            </p>
+                            <p>
+                                However, the rushed switch to a new vendor without addressing the underlying process issues means that some problems persist. The university community remains somewhat skeptical due to the rocky initial implementation.
+                            </p>
+                            <button class="mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" onclick="showConclusion('mixed')">
+                                See Final Outcome
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Decision Point 2-B (follows from Option B in Decision 1) -->
+                    <div class="decision-point hidden" id="decision-2-b">
+                        <h3 class="text-xl font-medium mb-3">Decision Point 2: Vendor Selection Criteria</h3>
+                        <p class="mb-4">
+                            Based on your needs assessment and ethical guidelines, you're now evaluating vendor proposals. Which criteria do you prioritize most highly in your selection process?
+                        </p>
+                        
+                        <div class="options">
+                            <div class="option" data-value="a" onclick="selectOption('decision-2-b', 'a')">
+                                <strong>Option A:</strong> Technical capabilities and prediction accuracy, with vendors demonstrating at least 85% accuracy in identifying at-risk students.
+                            </div>
+                            <div class="option" data-value="b" onclick="selectOption('decision-2-b', 'b')">
+                                <strong>Option B:</strong> Transparency, explainability, and fairness, with vendors required to provide detailed information about how their algorithms work and demonstrate fairness across different student populations.
+                            </div>
+                            <div class="option" data-value="c" onclick="selectOption('decision-2-b', 'c')">
+                                <strong>Option C:</strong> A balanced approach that considers technical capabilities, ethical considerations, and environmental impact, with specific requirements for model efficiency and data center sustainability.
+                            </div>
+                        </div>
+                        
+                        <div class="consequence mixed" id="consequence-2-b-a">
+                            <h4 class="font-semibold mb-2">Consequence:</h4>
+                            <p class="mb-3">
+                                The selected vendor offers impressive technical capabilities and high prediction accuracy. The system successfully identifies many at-risk students who might otherwise have been missed.
+                            </p>
+                            <p class="mb-3">
+                                However, the focus on accuracy comes at a cost. The system uses a large, complex model that is difficult to explain to stakeholders. Some faculty express concern about making interventions based on recommendations they don't understand.
+                            </p>
+                            <p>
+                                Additionally, the system's high computational requirements result in significant energy consumption, contradicting the university's sustainability goals. The carbon footprint of the AI system becomes a point of criticism from environmental groups on campus.
+                            </p>
+                            <button class="mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" onclick="showConclusion('mixed')">
+                                See Final Outcome
+                            </button>
+                        </div>
+                        
+                        <div class="consequence mixed" id="consequence-2-b-b">
+                            <h4 class="font-semibold mb-2">Consequence:</h4>
+                            <p class="mb-3">
+                                The selected vendor provides excellent transparency and explainability. Faculty and advisors can understand why the system flags particular students, which builds trust and facilitates appropriate interventions.
+                            </p>
+                            <p class="mb-3">
+                                The system demonstrates fairness across different student populations, avoiding the bias issues that have plagued similar systems at other institutions. This earns praise from equity-focused groups on campus.
+                            </p>
+                            <p>
+                                However, the focus on transparency and fairness means selecting a somewhat less sophisticated model with lower overall accuracy. Some students who could benefit from interventions are missed. Additionally, little attention was paid to the system's environmental impact, which remains higher than necessary.
+                            </p>
+                            <button class="mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" onclick="showConclusion('mixed')">
+                                See Final Outcome
+                            </button>
+                        </div>
+                        
+                        <div class="consequence positive" id="consequence-2-b-c">
+                            <h4 class="font-semibold mb-2">Consequence:</h4>
+                            <p class="mb-3">
+                                The balanced approach leads to selecting a vendor that offers a good combination of technical capabilities, ethical considerations, and environmental sustainability. The system achieves 80% accuracy while providing sufficient transparency for stakeholders to understand and trust its recommendations.
+                            </p>
+                            <p class="mb-3">
+                                The vendor's commitment to fairness ensures the system works equitably across different student populations. Regular bias audits are built into the implementation plan.
+                            </p>
+                            <p class="mb-3">
+                                The focus on model efficiency and data center sustainability results in a system with a significantly lower carbon footprint than alternatives. The vendor uses renewable energy for their data centers and has optimized their models to reduce computational requirements.
+                            </p>
+                            <p>
+                                This balanced approach earns broad support from the university community and aligns with the institution's values and commitments.
+                            </p>
+                            <button class="mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" onclick="showConclusion('positive')">
+                                See Final Outcome
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Decision Point 2-C (follows from Option C in Decision 1) -->
+                    <div class="decision-point hidden" id="decision-2-c">
+                        <h3 class="text-xl font-medium mb-3">Decision Point 2: Regaining Influence</h3>
+                        <p class="mb-4">
+                            The administration has moved forward with AI implementation despite your committee's recommendation against it. They've selected a vendor and plan to launch a pilot next semester. How do you respond to maintain ethical oversight?
+                        </p>
+                        
+                        <div class="options">
+                            <div class="option" data-value="a" onclick="selectOption('decision-2-c', 'a')">
+                                <strong>Option A:</strong> Resign from the committee in protest, making your ethical concerns public to the university community.
+                            </div>
+                            <div class="option" data-value="b" onclick="selectOption('decision-2-c', 'b')">
+                                <strong>Option B:</strong> Accept the decision but insist on implementing strong oversight mechanisms, including regular ethical audits and a clear process for addressing issues that arise.
+                            </div>
+                            <div class="option" data-value="c" onclick="selectOption('decision-2-c', 'c')">
+                                <strong>Option C:</strong> Propose a compromise: a limited pilot with enhanced privacy protections, explicit consent requirements, and sustainability considerations.
+                            </div>
+                        </div>
+                        
+                        <div class="consequence negative" id="consequence-2-c-a">
+                            <h4 class="font-semibold mb-2">Consequence:</h4>
+                            <p class="mb-3">
+                                Your resignation and public statement create significant controversy on campus. While some faculty and students support your stance, the administration portrays your actions as obstructionist.
+                            </p>
+                            <p class="mb-3">
+                                Without your ethical guidance, the AI implementation proceeds with minimal oversight. The system encounters serious issues with bias, privacy, and environmental impact that could have been mitigated with proper ethical guidance.
+                            </p>
+                            <p>
+                                Your principled stand raises awareness about AI ethics, but your absence from the process means losing the opportunity to influence the implementation in a positive direction.
+                            </p>
+                            <button class="mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" onclick="showConclusion('negative')">
+                                See Final Outcome
+                            </button>
+                        </div>
+                        
+                        <div class="consequence mixed" id="consequence-2-c-b">
+                            <h4 class="font-semibold mb-2">Consequence:</h4>
+                            <p class="mb-3">
+                                The administration agrees to implement oversight mechanisms, though with some reluctance. Your committee establishes a process for regular ethical audits and a clear pathway for addressing issues.
+                            </p>
+                            <p class="mb-3">
+                                When the system launches, several ethical issues emerge, including potential bias against non-traditional students and high energy consumption. Thanks to the oversight mechanisms, these issues are documented and addressed, though not as quickly or thoroughly as would be ideal.
+                            </p>
+                            <p>
+                                Your continued involvement allows you to mitigate some of the ethical concerns, though the implementation remains suboptimal from an ethical perspective.
+                            </p>
+                            <button class="mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" onclick="showConclusion('mixed')">
+                                See Final Outcome
+                            </button>
+                        </div>
+                        
+                        <div class="consequence positive" id="consequence-2-c-c">
+                            <h4 class="font-semibold mb-2">Consequence:</h4>
+                            <p class="mb-3">
+                                The administration appreciates your constructive approach and agrees to the compromise. The limited pilot includes enhanced privacy protections, explicit consent from participating students, and a requirement to use energy-efficient infrastructure.
+                            </p>
+                            <p class="mb-3">
+                                This approach allows for testing the potential benefits of the AI system while mitigating the ethical risks. The pilot generates valuable data about both the system's effectiveness and its ethical implications.
+                            </p>
+                            <p class="mb-3">
+                                The compromise rebuilds trust between your committee and the administration. When the pilot reveals both benefits and concerns, the administration is more receptive to your committee's recommendations for the full implementation.
+                            </p>
+                            <p>
+                                The focus on sustainability leads to selecting more energy-efficient models and infrastructure, significantly reducing the environmental impact compared to the original plan.
+                            </p>
+                            <button class="mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" onclick="showConclusion('positive')">
+                                See Final Outcome
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Conclusions -->
+                    <div class="hidden" id="conclusion-positive">
+                        <h2 class="text-2xl font-semibold mb-4">Final Outcome: Successful Ethical Implementation</h2>
+                        
+                        <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                            <h3 class="text-xl font-medium mb-3 text-green-800">Positive Outcome</h3>
+                            <p class="mb-3">
+                                One year later, Lakeside University's AI student success system is considered a model for ethical AI implementation in higher education. The system has contributed to a 5% increase in retention rates while maintaining strong ethical standards.
+                            </p>
+                            <p class="mb-3">
+                                Key success factors include:
+                            </p>
+                            <ul class="list-disc pl-8 my-3 space-y-1">
+                                <li>Thorough stakeholder engagement throughout the process</li>
+                                <li>Clear ethical guidelines that balanced multiple considerations</li>
+                                <li>Transparent system design that faculty and students can understand and trust</li>
+                                <li>Regular ethical audits to identify and address potential issues</li>
+                                <li>Energy-efficient implementation that aligns with sustainability goals</li>
+                            </ul>
+                            <p class="mb-3">
+                                The university's approach to AI ethics has been featured in higher education publications, and other institutions are looking to Lakeside as a model for their own AI implementations.
+                            </p>
+                            <p>
+                                Your leadership of the AI Ethics Committee has been recognized as instrumental to this success, demonstrating how ethical considerations can enhance rather than hinder technological innovation.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="text-xl font-semibold mb-3">Key Lessons</h3>
+                            <ul class="list-disc pl-8 space-y-2">
+                                <li>
+                                    <strong>Inclusive stakeholder engagement</strong> is essential for successful AI implementation. Involving those affected by the system builds trust and surfaces important considerations.
+                                </li>
+                                <li>
+                                    <strong>Balanced approach to ethical considerations</strong> yields better outcomes than focusing exclusively on technical capabilities or any single ethical concern.
+                                </li>
+                                <li>
+                                    <strong>Environmental sustainability</strong> should be a core consideration in AI ethics, not an afterthought. Energy-efficient models and infrastructure can significantly reduce environmental impact.
+                                </li>
+                                <li>
+                                    <strong>Transparency and explainability</strong> are crucial for building trust in AI systems, especially in educational contexts where decisions affect students' futures.
+                                </li>
+                                <li>
+                                    <strong>Ongoing oversight and auditing</strong> help identify and address ethical issues that may emerge during implementation and operation.
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-8 flex justify-center">
+                            <a href="interactive.html" class="px-6 py-3 bg-purple-700 text-white rounded-lg hover:bg-purple-800">
+                                Return to Interactive Elements
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden" id="conclusion-mixed">
+                        <h2 class="text-2xl font-semibold mb-4">Final Outcome: Partial Success with Ongoing Challenges</h2>
+                        
+                        <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                            <h3 class="text-xl font-medium mb-3 text-yellow-800">Mixed Outcome</h3>
+                            <p class="mb-3">
+                                One year later, Lakeside University's AI student success system shows mixed results. The system has helped identify some at-risk students and improved outcomes for certain groups, but challenges persist.
+                            </p>
+                            <p class="mb-3">
+                                The implementation has faced ongoing issues:
+                            </p>
+                            <ul class="list-disc pl-8 my-3 space-y-1">
+                                <li>Some stakeholders remain skeptical about the system's value and ethical implications</li>
+                                <li>Certain student populations show disparate outcomes, suggesting potential bias issues</li>
+                                <li>The system's environmental impact remains higher than necessary, creating tension with sustainability goals</li>
+                                <li>Faculty usage is inconsistent, with some departments embracing the system and others avoiding it</li>
+                            </ul>
+                            <p>
+                                Your AI Ethics Committee continues to work on addressing these challenges, making incremental improvements to the system. While not an unqualified success, the implementation has provided valuable lessons about the importance of ethical considerations in AI deployment.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="text-xl font-semibold mb-3">Key Lessons</h3>
+                            <ul class="list-disc pl-8 space-y-2">
+                                <li>
+                                    <strong>Ethical considerations should be integrated from the beginning</strong>, not added later. Retrofitting ethical safeguards to an existing system is more difficult and less effective.
+                                </li>
+                                <li>
+                                    <strong>Balancing multiple factors</strong> is challenging but necessary. Focusing too narrowly on technical capabilities, transparency, or any single factor leads to suboptimal outcomes.
+                                </li>
+                                <li>
+                                    <strong>Environmental impact</strong> should be considered alongside other ethical factors. AI systems can have significant carbon footprints that contradict institutional sustainability commitments.
+                                </li>
+                                <li>
+                                    <strong>Stakeholder buy-in</strong> is crucial for successful implementation. Without it, even technically sound systems may face resistance and limited adoption.
+                                </li>
+                                <li>
+                                    <strong>Ethical AI implementation is an ongoing process</strong>, not a one-time decision. Continuous monitoring, evaluation, and improvement are necessary.
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-8 flex justify-center">
+                            <a href="interactive.html" class="px-6 py-3 bg-purple-700 text-white rounded-lg hover:bg-purple-800">
+                                Return to Interactive Elements
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden" id="conclusion-negative">
+                        <h2 class="text-2xl font-semibold mb-4">Final Outcome: Failed Implementation</h2>
+                        
+                        <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                            <h3 class="text-xl font-medium mb-3 text-red-800">Negative Outcome</h3>
+                            <p class="mb-3">
+                                One year later, Lakeside University has abandoned its AI student success system after a series of escalating problems. The implementation is widely considered a failure, having consumed significant resources with little benefit.
+                            </p>
+                            <p class="mb-3">
+                                Major issues that led to the failure include:
+                            </p>
+                            <ul class="list-disc pl-8 my-3 space-y-1">
+                                <li>Widespread distrust of the system among faculty and students</li>
+                                <li>Evidence of algorithmic bias that disadvantaged certain student populations</li>
+                                <li>Privacy concerns that led to formal complaints and potential legal issues</li>
+                                <li>High energy consumption that contradicted the university's sustainability commitments</li>
+                                <li>Lack of transparency that made it difficult to address emerging problems</li>
+                            </ul>
+                            <p>
+                                The university has formed a task force to review what went wrong and develop guidelines for any future technology implementations. There's a growing recognition that ethical considerations must be central to such initiatives, not peripheral.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="text-xl font-semibold mb-3">Key Lessons</h3>
+                            <ul class="list-disc pl-8 space-y-2">
+                                <li>
+                                    <strong>Rushing implementation without adequate ethical consideration</strong> leads to significant problems that can ultimately doom the entire project.
+                                </li>
+                                <li>
+                                    <strong>Stakeholder engagement is not optional</strong>. Without buy-in from those affected by the system, resistance will undermine even technically sound implementations.
+                                </li>
+                                <li>
+                                    <strong>Ethical issues compound over time</strong> if not addressed early. What begins as minor concerns can escalate into major problems that force abandonment of the system.
+                                </li>
+                                <li>
+                                    <strong>Environmental impact</strong> is an increasingly important ethical consideration. High energy consumption can damage an institution's reputation and contradict its values.
+                                </li>
+                                <li>
+                                    <strong>Ethical AI requires ongoing oversight</strong>, not just initial approval. Without mechanisms to identify and address emerging issues, problems will persist and worsen.
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-8 flex justify-center">
+                            <a href="interactive.html" class="px-6 py-3 bg-purple-700 text-white rounded-lg hover:bg-purple-800">
+                                Return to Interactive Elements
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About This Course</h3>
+                    <p class="text-gray-300">
+                        This AI Ethics micro-credential course was developed for the University of St. Thomas to provide faculty and staff with essential knowledge and tools for ethical AI implementation.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-white">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-white">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-300">
+                        University of St. Thomas<br>
+                        2115 Summit Avenue<br>
+                        St. Paul, MN 55105<br>
+                        <a href="mailto:aiethics@stthomas.edu" class="hover:text-white">aiethics@stthomas.edu</a>
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 University of St. Thomas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function selectOption(decisionId, option) {
+            // Remove selected class from all options in this decision
+            document.querySelectorAll(`#${decisionId} .option`).forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked option
+            document.querySelector(`#${decisionId} .option[data-value="${option}"]`).classList.add('selected');
+            
+            // Show consequence
+            document.querySelectorAll(`#${decisionId} .consequence`).forEach(cons => {
+                cons.style.display = 'none';
+            });
+            
+            document.getElementById(`consequence-${decisionId}-${option}`).style.display = 'block';
+        }
+        
+        function showNextDecision(currentDecisionId, nextDecisionId) {
+            // Hide current decision
+            document.getElementById(currentDecisionId).classList.add('hidden');
+            
+            // Show next decision
+            document.getElementById(nextDecisionId).classList.remove('hidden');
+            
+            // Scroll to the next decision
+            document.getElementById(nextDecisionId).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showConclusion(type) {
+            // Hide all decision points
+            document.querySelectorAll('.decision-point').forEach(decision => {
+                decision.classList.add('hidden');
+            });
+            
+            // Hide all conclusions
+            document.querySelectorAll('[id^="conclusion-"]').forEach(conclusion => {
+                conclusion.classList.add('hidden');
+            });
+            
+            // Show the appropriate conclusion
+            document.getElementById(`conclusion-${type}`).classList.remove('hidden');
+            
+            // Scroll to the conclusion
+            document.getElementById(`conclusion-${type}`).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

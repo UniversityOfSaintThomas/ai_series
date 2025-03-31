@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Impact Dashboard - University of St. Thomas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .dashboard-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-bottom: 2rem;
+        }
+        .slider-container {
+            margin-bottom: 1.5rem;
+        }
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #e5e7eb;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #8b5cf6;
+            cursor: pointer;
+        }
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #8b5cf6;
+            cursor: pointer;
+        }
+        .impact-card {
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        .impact-card.low {
+            background-color: #d1fae5;
+            border-left: 4px solid #10b981;
+        }
+        .impact-card.medium {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+        }
+        .impact-card.high {
+            background-color: #fee2e2;
+            border-left: 4px solid #ef4444;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-purple-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://www.stthomas.edu/media/universityrelations/graphics/logos/ustwordmark/UST-Wordmark-Primary-Purple.png" alt="University of St. Thomas Logo" class="h-10 mr-3">
+                    <div>
+                        <h1 class="text-2xl font-bold">AI Ethics Course</h1>
+                        <p class="text-sm">75-Minute Micro-Credential</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="hover:text-purple-200">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-purple-200">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-purple-200 font-semibold">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-purple-200">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-purple-200">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold mb-2">Environmental Impact Dashboard</h1>
+            <p class="text-gray-600 mb-4">
+                Explore how different AI implementation choices affect environmental sustainability metrics. 
+                Adjust the parameters below to see how changes in model size, energy source, and data center location 
+                impact energy consumption, carbon emissions, and water usage.
+            </p>
+            
+            <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                <h2 class="text-lg font-semibold mb-2 text-blue-800">How to Use This Dashboard</h2>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Adjust the sliders to change AI implementation parameters</li>
+                    <li>Observe how the charts update in real-time</li>
+                    <li>Review the impact assessment for each sustainability metric</li>
+                    <li>Consider how these factors might influence your AI implementation decisions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dashboard-container">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-xl font-semibold mb-4">AI Implementation Parameters</h2>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <!-- Model Size Slider -->
+                        <div class="slider-container">
+                            <label class="block text-gray-700 font-medium mb-2">
+                                Model Size: <span id="model-size-value">Medium (10B parameters)</span>
+                            </label>
+                            <input type="range" min="1" max="5" value="3" class="slider" id="model-size">
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>Small</span>
+                                <span>Large</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Energy Source Slider -->
+                        <div class="slider-container">
+                            <label class="block text-gray-700 font-medium mb-2">
+                                Energy Source: <span id="energy-source-value">Mixed (50% renewable)</span>
+                            </label>
+                            <input type="range" min="1" max="5" value="3" class="slider" id="energy-source">
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>Fossil Fuels</span>
+                                <span>100% Renewable</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Data Center Location Slider -->
+                        <div class="slider-container">
+                            <label class="block text-gray-700 font-medium mb-2">
+                                Data Center Location: <span id="location-value">Temperate Climate</span>
+                            </label>
+                            <input type="range" min="1" max="5" value="3" class="slider" id="location">
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>Hot Climate</span>
+                                <span>Cold Climate</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Usage Intensity Slider -->
+                        <div class="slider-container">
+                            <label class="block text-gray-700 font-medium mb-2">
+                                Usage Intensity: <span id="usage-value">Moderate (8 hours/day)</span>
+                            </label>
+                            <input type="range" min="1" max="5" value="3" class="slider" id="usage">
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>Low</span>
+                                <span>High</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Optimization Level Slider -->
+                        <div class="slider-container">
+                            <label class="block text-gray-700 font-medium mb-2">
+                                Optimization Level: <span id="optimization-value">Moderate Optimization</span>
+                            </label>
+                            <input type="range" min="1" max="5" value="3" class="slider" id="optimization">
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>No Optimization</span>
+                                <span>Highly Optimized</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h3 class="text-lg font-semibold mb-3">Impact Assessment</h3>
+                        
+                        <!-- Energy Consumption Impact -->
+                        <div class="impact-card" id="energy-impact">
+                            <h4 class="font-semibold mb-1">Energy Consumption</h4>
+                            <p class="text-sm mb-2" id="energy-impact-value">Moderate impact</p>
+                            <p class="text-sm" id="energy-impact-description">
+                                Your current configuration results in moderate energy consumption. Consider increasing optimization or using smaller models to reduce energy usage.
+                            </p>
+                        </div>
+                        
+                        <!-- Carbon Footprint Impact -->
+                        <div class="impact-card" id="carbon-impact">
+                            <h4 class="font-semibold mb-1">Carbon Footprint</h4>
+                            <p class="text-sm mb-2" id="carbon-impact-value">Moderate impact</p>
+                            <p class="text-sm" id="carbon-impact-description">
+                                Your current configuration results in moderate carbon emissions. Increasing renewable energy usage would significantly reduce your carbon footprint.
+                            </p>
+                        </div>
+                        
+                        <!-- Water Usage Impact -->
+                        <div class="impact-card" id="water-impact">
+                            <h4 class="font-semibold mb-1">Water Usage</h4>
+                            <p class="text-sm mb-2" id="water-impact-value">Moderate impact</p>
+                            <p class="text-sm" id="water-impact-description">
+                                Your current configuration results in moderate water usage for cooling. Data centers in cooler climates typically require less water for cooling.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="text-xl font-semibold mb-4">Environmental Impact Visualization</h2>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <!-- Energy Consumption Chart -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-medium mb-3">Energy Consumption</h3>
+                            <div class="chart-container">
+                                <canvas id="energy-chart"></canvas>
+                            </div>
+                            <p class="text-sm text-gray-600">
+                                Measured in kilowatt-hours (kWh) per day. Larger models and higher usage intensity increase energy consumption, while optimization reduces it.
+                            </p>
+                        </div>
+                        
+                        <!-- Carbon Emissions Chart -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-medium mb-3">Carbon Emissions</h3>
+                            <div class="chart-container">
+                                <canvas id="carbon-chart"></canvas>
+                            </div>
+                            <p class="text-sm text-gray-600">
+                                Measured in kilograms of CO₂ equivalent per day. Energy source has the most significant impact on carbon emissions.
+                            </p>
+                        </div>
+                        
+                        <!-- Water Usage Chart -->
+                        <div>
+                            <h3 class="text-lg font-medium mb-3">Water Usage</h3>
+                            <div class="chart-container">
+                                <canvas id="water-chart"></canvas>
+                            </div>
+                            <p class="text-sm text-gray-600">
+                                Measured in liters per day. Data center location and cooling requirements significantly impact water usage.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-10 bg-purple-50 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold mb-4">Sustainable AI Implementation Recommendations</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-medium mb-2 text-purple-800">Model Selection</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Use the smallest model that can effectively perform the required task</li>
+                            <li>Consider model distillation to create smaller, more efficient versions of large models</li>
+                            <li>Evaluate whether accuracy improvements from larger models justify increased environmental impact</li>
+                            <li>Use specialized models for specific tasks rather than general-purpose models when possible</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-medium mb-2 text-purple-800">Infrastructure Choices</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Select cloud providers or data centers that use renewable energy</li>
+                            <li>Consider geographic location for data centers (cooler climates reduce cooling needs)</li>
+                            <li>Look for providers that report and actively work to reduce their water usage</li>
+                            <li>Evaluate providers based on their Power Usage Effectiveness (PUE) metrics</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-medium mb-2 text-purple-800">Optimization Strategies</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Implement model quantization to reduce computational requirements</li>
+                            <li>Use efficient inference techniques like batching and caching</li>
+                            <li>Schedule intensive tasks during times when renewable energy is more available</li>
+                            <li>Regularly review and optimize code efficiency</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-medium mb-2 text-purple-800">Usage Policies</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Develop clear guidelines for when AI use is appropriate and necessary</li>
+                            <li>Implement rate limiting for high-intensity AI applications</li>
+                            <li>Consider the environmental impact in cost-benefit analyses for AI projects</li>
+                            <li>Track and report on environmental metrics for AI systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About This Course</h3>
+                    <p class="text-gray-300">
+                        This AI Ethics micro-credential course was developed for the University of St. Thomas to provide faculty and staff with essential knowledge and tools for ethical AI implementation.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-white">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-white">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-300">
+                        University of St. Thomas<br>
+                        2115 Summit Avenue<br>
+                        St. Paul, MN 55105<br>
+                        <a href="mailto:aiethics@stthomas.edu" class="hover:text-white">aiethics@stthomas.edu</a>
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 University of St. Thomas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize charts
+            const energyChart = new Chart(document.getElementById('energy-chart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ['Current Configuration', 'Baseline', 'Optimized Configuration'],
+                    datasets: [{
+                        label: 'Energy Consumption (kWh/day)',
+                        data: [150, 100, 50],
+                        backgroundColor: [
+                            '#8b5cf6',
+                            '#9ca3af',
+                            '#10b981'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'kWh per day'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            const carbonChart = new Chart(document.getElementById('carbon-chart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ['Current Configuration', 'Baseline', 'Optimized Configuration'],
+                    datasets: [{
+                        label: 'Carbon Emissions (kg CO₂e/day)',
+                        data: [75, 50, 10],
+                        backgroundColor: [
+                            '#8b5cf6',
+                            '#9ca3af',
+                            '#10b981'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'kg CO₂e per day'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            const waterChart = new Chart(document.getElementById('water-chart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ['Current Configuration', 'Baseline', 'Optimized Configuration'],
+                    datasets: [{
+                        label: 'Water Usage (liters/day)',
+                        data: [1000, 750, 250],
+                        backgroundColor: [
+                            '#8b5cf6',
+                            '#9ca3af',
+                            '#10b981'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Liters per day'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Get slider elements
+            const modelSizeSlider = document.getElementById('model-size');
+            const energySourceSlider = document.getElementById('energy-source');
+            const locationSlider = document.getElementById('location');
+            const usageSlider = document.getElementById('usage');
+            const optimizationSlider = document.getElementById('optimization');
+            
+            // Get value display elements
+            const modelSizeValue = document.getElementById('model-size-value');
+            const energySourceValue = document.getElementById('energy-source-value');
+            const locationValue = document.getElementById('location-value');
+            const usageValue = document.getElementById('usage-value');
+            const optimizationValue = document.getElementById('optimization-value');
+            
+            // Get impact elements
+            const energyImpact = document.getElementById('energy-impact');
+            const carbonImpact = document.getElementById('carbon-impact');
+            const waterImpact = document.getElementById('water-impact');
+            const energyImpactValue = document.getElementById('energy-impact-value');
+            const carbonImpactValue = document.getElementById('carbon-impact-value');
+            const waterImpactValue = document.getElementById('water-impact-value');
+            const energyImpactDescription = document.getElementById('energy-impact-description');
+            const carbonImpactDescription = document.getElementById('carbon-impact-description');
+            const waterImpactDescription = document.getElementById('water-impact-description');
+            
+            // Model size labels
+            const modelSizeLabels = [
+                'Very Small (1B parameters)',
+                'Small (5B parameters)',
+                'Medium (10B parameters)',
+                'Large (50B parameters)',
+                'Very Large (175B+ parameters)'
+            ];
+            
+            // Energy source labels
+            const energySourceLabels = [
+                'Coal/Oil (0% renewable)',
+                'Mostly Fossil Fuels (25% renewable)',
+                'Mixed (50% renewable)',
+                'Mostly Renewable (75% renewable)',
+                '100% Renewable Energy'
+            ];
+            
+            // Location labels
+            const locationLabels = [
+                'Very Hot Climate (high cooling needs)',
+                'Hot Climate',
+                'Temperate Climate',
+                'Cool Climate',
+                'Cold Climate (minimal cooling needs)'
+            ];
+            
+            // Usage labels
+            const usageLabels = [
+                'Very Low (2 hours/day)',
+                'Low (4 hours/day)',
+                'Moderate (8 hours/day)',
+                'High (16 hours/day)',
+                'Very High (24 hours/day)'
+            ];
+            
+            // Optimization labels
+            const optimizationLabels = [
+                'No Optimization',
+                'Basic Optimization',
+                'Moderate Optimization',
+                'Significant Optimization',
+                'Maximum Optimization'
+            ];
+            
+            // Update function
+            function updateDashboard() {
+                // Get current values
+                const modelSize = parseInt(modelSizeSlider.value);
+                const energySource = parseInt(energySourceSlider.value);
+                const location = parseInt(locationSlider.value);
+                const usage = parseInt(usageSlider.value);
+                const optimization = parseInt(optimizationSlider.value);
+                
+                // Update value displays
+                modelSizeValue.textContent = modelSizeLabels[modelSize - 1];
+                energySourceValue.textContent = energySourceLabels[energySource - 1];
+                locationValue.textContent = locationLabels[location - 1];
+                usageValue.textContent = usageLabels[usage - 1];
+                optimizationValue.textContent = optimizationLabels[optimization - 1];
+                
+                // Calculate impacts
+                // Energy impact is affected by model size, usage, and optimization
+                const energyImpactScore = (modelSize * 2 + usage * 1.5 - optimization) / 1.5;
+                
+                // Carbon impact is affected by energy impact and energy source
+                const carbonImpactScore = energyImpactScore * (6 - energySource) / 2.5;
+                
+                // Water impact is affected by energy impact and location
+                const waterImpactScore = energyImpactScore * (6 - location) / 2.5;
+                
+                // Update charts
+                energyChart.data.datasets[0].data[0] = Math.round(50 * energyImpactScore);
+                carbonChart.data.datasets[0].data[0] = Math.round(25 * carbonImpactScore);
+                waterChart.data.datasets[0].data[0] = Math.round(250 * waterImpactScore);
+                
+                energyChart.update();
+                carbonChart.update();
+                waterChart.update();
+                
+                // Update impact assessments
+                updateImpactAssessment(energyImpact, energyImpactValue, energyImpactDescription, energyImpactScore, 'energy');
+                updateImpactAssessment(carbonImpact, carbonImpactValue, carbonImpactDescription, carbonImpactScore, 'carbon');
+                updateImpactAssessment(waterImpact, waterImpactValue, waterImpactDescription, waterImpactScore, 'water');
+            }
+            
+            function updateImpactAssessment(element, valueElement, descriptionElement, score, type) {
+                // Remove existing classes
+                element.classList.remove('low', 'medium', 'high');
+                
+                let impactLevel, description;
+                
+                if (score <= 2) {
+                    impactLevel = 'Low';
+                    element.classList.add('low');
+                    
+                    if (type === 'energy') {
+                        description = 'Your configuration has low energy consumption. This is excellent for sustainability and operational costs.';
+                    } else if (type === 'carbon') {
+                        description = 'Your configuration has a low carbon footprint. This aligns well with climate goals and sustainability commitments.';
+                    } else {
+                        description = 'Your configuration has low water usage. This is excellent for water conservation, especially in water-stressed regions.';
+                    }
+                } else if (score <= 4) {
+                    impactLevel = 'Moderate';
+                    element.classList.add('medium');
+                    
+                    if (type === 'energy') {
+                        description = 'Your configuration has moderate energy consumption. Consider increasing optimization or using smaller models to reduce energy usage.';
+                    } else if (type === 'carbon') {
+                        description = 'Your configuration has a moderate carbon footprint. Increasing renewable energy usage would significantly reduce your carbon emissions.';
+                    } else {
+                        description = 'Your configuration has moderate water usage. Data centers in cooler climates typically require less water for cooling.';
+                    }
+                } else {
+                    impactLevel = 'High';
+                    element.classList.add('high');
+                    
+                    if (type === 'energy') {
+                        description = 'Your configuration has high energy consumption. Consider using smaller models, increasing optimization, or reducing usage intensity.';
+                    } else if (type === 'carbon') {
+                        description = 'Your configuration has a high carbon footprint. Switching to renewable energy sources would dramatically reduce emissions.';
+                    } else {
+                        description = 'Your configuration has high water usage. Consider data centers in cooler climates or with advanced cooling technologies to reduce water consumption.';
+                    }
+                }
+                
+                valueElement.textContent = `${impactLevel} impact`;
+                descriptionElement.textContent = description;
+            }
+            
+            // Add event listeners to sliders
+            modelSizeSlider.addEventListener('input', updateDashboard);
+            energySourceSlider.addEventListener('input', updateDashboard);
+            locationSlider.addEventListener('input', updateDashboard);
+            usageSlider.addEventListener('input', updateDashboard);
+            optimizationSlider.addEventListener('input', updateDashboard);
+            
+            // Initialize dashboard
+            updateDashboard();
+        });
+    </script>
+</body>
+</html>

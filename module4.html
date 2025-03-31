@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4: Responsible AI Integration - University of St. Thomas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-purple-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://www.stthomas.edu/media/universityrelations/graphics/logos/ustwordmark/UST-Wordmark-Primary-Purple.png" alt="University of St. Thomas Logo" class="h-10 mr-3">
+                    <div>
+                        <h1 class="text-2xl font-bold">AI Ethics Course</h1>
+                        <p class="text-sm">75-Minute Micro-Credential</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="hover:text-purple-200">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-purple-200">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-purple-200">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-purple-200">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-purple-200">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="md:col-span-1">
+                <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                    <h3 class="text-xl font-bold mb-4 text-purple-800">Module Navigation</h3>
+                    <ul class="space-y-2">
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module1.html" class="block">Module 1: AI Ethics Foundations</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module2.html" class="block">Module 2: AI Risks, Biases, and Privacy</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module3.html" class="block">Module 3: AI Sustainability and Environmental Impact</a>
+                        </li>
+                        <li class="bg-purple-100 rounded p-2 font-semibold">
+                            <a href="module4.html" class="block">Module 4: Responsible AI Integration</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module5.html" class="block">Module 5: Creating an AI Ethics Action Plan</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                    <h3 class="text-lg font-semibold mb-2">Module Resources</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a 
+                                href="https://www.stthomas.edu/media/centerforethicsincommunication/AI-Integration-Checklist.pdf" 
+                                target="_blank"
+                                class="text-blue-600 hover:underline flex items-center"
+                            >
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                                AI Integration Checklist
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="https://www.stthomas.edu/media/centerforethicsincommunication/AI-Governance-Framework.pdf" 
+                                target="_blank"
+                                class="text-blue-600 hover:underline flex items-center"
+                            >
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                                AI Governance Framework
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="https://www.stthomas.edu/media/centerforethicsincommunication/AI-Stakeholder-Engagement-Guide.pdf" 
+                                target="_blank"
+                                class="text-blue-600 hover:underline flex items-center"
+                            >
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                                Stakeholder Engagement Guide
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="md:col-span-3">
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h1 class="text-3xl font-bold mb-2">Module 4: Responsible AI Integration</h1>
+                    <div class="text-sm text-gray-500 mb-4">Estimated time: 15 minutes</div>
+                    
+                    <div class="mb-6">
+                        <h2 class="text-xl font-semibold mb-2">Learning Objectives</h2>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Develop a framework for responsible AI integration in educational settings</li>
+                            <li>Identify key stakeholders and their roles in ethical AI implementation</li>
+                            <li>Understand governance structures needed for responsible AI oversight</li>
+                            <li>Learn strategies for building AI literacy among faculty, staff, and students</li>
+                            <li>Apply change management principles to AI implementation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4">Framework for Responsible AI Integration</h2>
+                        
+                        <p class="mb-4">
+                            Integrating AI into educational settings requires a thoughtful, systematic approach that balances innovation with ethical considerations. This module presents a comprehensive framework for responsible AI integration that addresses governance, stakeholder engagement, implementation processes, and ongoing evaluation.
+                        </p>
+                        
+                        <div class="my-6">
+                            <div class="aspect-w-16 aspect-h-9">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/pYXJQ4LQx4s" title="Responsible AI Integration in Higher Education" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-64 rounded"></iframe>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-2">An overview of responsible AI integration in higher education contexts</p>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-6 rounded-lg mb-6">
+                            <h3 class="text-lg font-semibold mb-3 text-purple-800">The ETHICS Framework for AI Integration</h3>
+                            
+                            <p class="mb-4">
+                                The ETHICS framework provides a structured approach to integrating AI in educational settings:
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-lg shadow-sm">
+                                    <h4 class="font-semibold mb-2 text-purple-700">E: Evaluate Needs and Context</h4>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Identify specific educational challenges AI could address</li>
+                                        <li>Assess institutional readiness for AI implementation</li>
+                                        <li>Consider cultural and contextual factors</li>
+                                        <li>Determine alignment with institutional mission and values</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow-sm">
+                                    <h4 class="font-semibold mb-2 text-purple-700">T: Transparent Governance</h4>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Establish clear governance structures for AI oversight</li>
+                                        <li>Define roles and responsibilities for AI management</li>
+                                        <li>Create transparent decision-making processes</li>
+                                        <li>Develop policies for AI procurement and use</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow-sm">
+                                    <h4 class="font-semibold mb-2 text-purple-700">H: Human-Centered Design</h4>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Prioritize human agency and autonomy in AI systems</li>
+                                        <li>Design AI implementations with user needs in mind</li>
+                                        <li>Ensure accessibility for diverse users</li>
+                                        <li>Maintain meaningful human oversight of AI systems</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow-sm">
+                                    <h4 class="font-semibold mb-2 text-purple-700">I: Inclusive Stakeholder Engagement</h4>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Identify and involve all relevant stakeholders</li>
+                                        <li>Ensure diverse perspectives in planning and implementation</li>
+                                        <li>Create feedback mechanisms for ongoing input</li>
+                                        <li>Address concerns and resistance proactively</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow-sm">
+                                    <h4 class="font-semibold mb-2 text-purple-700">C: Continuous Assessment</h4>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Implement ongoing monitoring of AI systems</li>
+                                        <li>Establish metrics for effectiveness and ethical performance</li>
+                                        <li>Conduct regular audits for bias and other issues</li>
+                                        <li>Create mechanisms for addressing identified problems</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow-sm">
+                                    <h4 class="font-semibold mb-2 text-purple-700">S: Sustainable Implementation</h4>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Consider environmental impacts of AI systems</li>
+                                        <li>Plan for long-term maintenance and updates</li>
+                                        <li>Build institutional capacity for AI management</li>
+                                        <li>Ensure financial sustainability of AI initiatives</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Stakeholder Engagement in AI Integration</h3>
+                        
+                        <p class="mb-4">
+                            Successful AI integration requires meaningful engagement with diverse stakeholders who may be affected by or have influence over AI implementation. Key stakeholder groups include:
+                        </p>
+                        
+                        <div class="overflow-x-auto mb-6">
+                            <table class="min-w-full bg-white border border-gray-200">
+                                <thead>
+                                    <tr>
+                                        <th class="py-2 px-4 border-b">Stakeholder Group</th>
+                                        <th class="py-2 px-4 border-b">Role in AI Integration</th>
+                                        <th class="py-2 px-4 border-b">Engagement Strategies</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">University Leadership</td>
+                                        <td class="py-2 px-4 border-b">Setting strategic direction, allocating resources, establishing policies</td>
+                                        <td class="py-2 px-4 border-b">Executive briefings, strategic planning sessions, policy development workshops</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Faculty</td>
+                                        <td class="py-2 px-4 border-b">Integrating AI into teaching, research, and advising; providing subject matter expertise</td>
+                                        <td class="py-2 px-4 border-b">Faculty forums, department consultations, professional development, pilot programs</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Students</td>
+                                        <td class="py-2 px-4 border-b">Primary users of many AI systems; providing feedback on effectiveness and impact</td>
+                                        <td class="py-2 px-4 border-b">Student focus groups, surveys, student government representation, user testing</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">IT Staff</td>
+                                        <td class="py-2 px-4 border-b">Technical implementation, integration with existing systems, security, maintenance</td>
+                                        <td class="py-2 px-4 border-b">Technical working groups, training programs, implementation planning</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Ethics/DEI Officers</td>
+                                        <td class="py-2 px-4 border-b">Ensuring ethical implementation and addressing equity concerns</td>
+                                        <td class="py-2 px-4 border-b">Ethics review processes, equity impact assessments, policy development</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Legal/Compliance</td>
+                                        <td class="py-2 px-4 border-b">Ensuring regulatory compliance and managing legal risks</td>
+                                        <td class="py-2 px-4 border-b">Legal review processes, compliance assessments, policy development</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="my-6">
+                            <img src="https://www.stthomas.edu/media/centerforethicsincommunication/AI-Governance-Structure.jpg" alt="AI Governance Structure" class="w-full rounded-lg">
+                            <p class="text-sm text-gray-500 mt-2">Example of an AI governance structure for higher education institutions</p>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">AI Governance Structures</h3>
+                        
+                        <p class="mb-4">
+                            Effective AI governance provides oversight, accountability, and direction for AI implementation. Key components of AI governance include:
+                        </p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold mb-1">AI Ethics Committee</h4>
+                                <p>
+                                    A cross-functional committee responsible for developing AI ethics policies, reviewing high-risk AI applications, and addressing ethical concerns. Should include representatives from diverse stakeholder groups and disciplines.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold mb-1">AI Review Process</h4>
+                                <p>
+                                    A structured process for evaluating proposed AI implementations, assessing risks, and ensuring alignment with institutional values and policies. Should include criteria for determining level of review based on risk.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold mb-1">AI Policy Framework</h4>
+                                <p>
+                                    Comprehensive policies governing AI procurement, use, data management, privacy, security, and ethical considerations. Should be integrated with existing institutional policies and regularly updated.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold mb-1">Monitoring and Accountability Mechanisms</h4>
+                                <p>
+                                    Systems for ongoing monitoring of AI implementations, tracking outcomes, identifying issues, and ensuring accountability for addressing problems. Should include regular reporting to leadership.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold mb-1">Feedback Channels</h4>
+                                <p>
+                                    Mechanisms for stakeholders to report concerns, provide feedback, and suggest improvements to AI systems. Should be accessible, responsive, and protected from retaliation.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Building AI Literacy</h3>
+                        
+                        <p class="mb-4">
+                            AI literacy—the ability to understand, use, and critically evaluate AI systems—is essential for responsible AI integration. Strategies for building AI literacy include:
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Faculty and Staff Development</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Workshops on AI fundamentals and applications</li>
+                                    <li>Training on ethical considerations in AI use</li>
+                                    <li>Hands-on experience with relevant AI tools</li>
+                                    <li>Communities of practice for ongoing learning</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Student Education</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Integration of AI literacy into curriculum</li>
+                                    <li>Workshops on responsible AI use</li>
+                                    <li>Guidelines for appropriate AI use in coursework</li>
+                                    <li>Opportunities for critical engagement with AI</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Leadership Education</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Executive briefings on AI trends and implications</li>
+                                    <li>Strategic planning for AI integration</li>
+                                    <li>Understanding of AI governance requirements</li>
+                                    <li>Risk management considerations</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Resources and Support</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>AI resource center with guidance and tools</li>
+                                    <li>Consultation services for AI implementation</li>
+                                    <li>Documentation and user guides</li>
+                                    <li>Technical support for AI tools</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Change Management for AI Implementation</h3>
+                        
+                        <p class="mb-4">
+                            Implementing AI often represents significant change for educational institutions. Effective change management strategies include:
+                        </p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">1. Create a Compelling Vision</h4>
+                                <p>
+                                    Articulate a clear vision for how AI will enhance teaching, learning, research, or operations. Connect AI implementation to institutional mission and values. Address the "why" behind AI adoption.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">2. Build a Coalition</h4>
+                                <p>
+                                    Identify and engage champions across the institution who can advocate for responsible AI use. Include both formal leaders and influential faculty, staff, and students. Create cross-functional implementation teams.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">3. Address Concerns Proactively</h4>
+                                <p>
+                                    Anticipate and address concerns about job displacement, academic integrity, privacy, and other issues. Provide clear information about how these concerns will be mitigated. Create safe spaces for dialogue.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">4. Implement Incrementally</h4>
+                                <p>
+                                    Start with pilot projects that demonstrate value and build confidence. Scale successful implementations gradually. Learn from early experiences and adjust approach accordingly.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">5. Provide Support and Resources</h4>
+                                <p>
+                                    Ensure adequate training, technical support, and resources for AI implementation. Recognize that learning curves vary and provide differentiated support. Celebrate early successes and share lessons learned.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                            <h4 class="font-semibold mb-2">Case Example: Phased AI Integration at Midwest University</h4>
+                            <p class="mb-3">
+                                Midwest University implemented a phased approach to integrating AI tools across campus:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-1 mb-3">
+                                <h5 class="font-medium">Phase 1: Foundation Building</h5>
+                                <li>Established an AI Ethics Committee with diverse representation</li>
+                                <li>Developed institutional AI principles and policies</li>
+                                <li>Conducted AI literacy workshops for key stakeholders</li>
+                                <li>Created an AI resource center with guidance and support</li>
+                            </ul>
+                            <ul class="list-disc pl-5 space-y-1 mb-3">
+                                <h5 class="font-medium">Phase 2: Pilot Implementation</h5>
+                                <li>Identified three departments for initial AI pilots</li>
+                                <li>Implemented small-scale AI applications with clear objectives</li>
+                                <li>Gathered data on effectiveness, challenges, and stakeholder experiences</li>
+                                <li>Refined governance processes based on pilot learnings</li>
+                            </ul>
+                            <ul class="list-disc pl-5 space-y-1 mb-3">
+                                <h5 class="font-medium">Phase 3: Scaled Implementation</h5>
+                                <li>Expanded successful AI applications to additional departments</li>
+                                <li>Developed department-specific guidelines and support</li>
+                                <li>Created communities of practice for knowledge sharing</li>
+                                <li>Implemented comprehensive monitoring and evaluation</li>
+                            </ul>
+                            <p>
+                                This phased approach allowed the university to build capacity, address concerns, and learn from experience before full-scale implementation, resulting in higher adoption rates and fewer ethical issues.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4">Module Assessment</h2>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-4">Knowledge Check</h3>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <p class="font-medium mb-2">1. Which component of the ETHICS framework focuses on involving diverse perspectives in AI planning and implementation?</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1a" name="q1" class="mr-2">
+                                            <label for="q1a">Evaluate Needs and Context</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1b" name="q1" class="mr-2">
+                                            <label for="q1b">Transparent Governance</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1c" name="q1" class="mr-2">
+                                            <label for="q1c">Human-Centered Design</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1d" name="q1" class="mr-2">
+                                            <label for="q1d">Inclusive Stakeholder Engagement</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-500">
+                                        Correct Answer: Inclusive Stakeholder Engagement. This component emphasizes the importance of identifying and involving all relevant stakeholders and ensuring diverse perspectives in planning and implementation.
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <p class="font-medium mb-2">2. Which of the following is NOT typically a key component of AI governance structures in higher education?</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2a" name="q2" class="mr-2">
+                                            <label for="q2a">AI Ethics Committee</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2b" name="q2" class="mr-2">
+                                            <label for="q2b">AI Review Process</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2c" name="q2" class="mr-2">
+                                            <label for="q2c">Centralized AI Development Team</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2d" name="q2" class="mr-2">
+                                            <label for="q2d">Feedback Channels</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-500">
+                                        Correct Answer: Centralized AI Development Team. While some institutions may have AI development teams, this is not typically considered a core component of AI governance structures, which focus more on oversight, policy development, and review processes.
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <p class="font-medium mb-2">3. Which change management strategy for AI implementation emphasizes starting with small-scale projects before broader deployment?</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3a" name="q3" class="mr-2">
+                                            <label for="q3a">Create a Compelling Vision</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3b" name="q3" class="mr-2">
+                                            <label for="q3b">Build a Coalition</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3c" name="q3" class="mr-2">
+                                            <label for="q3c">Implement Incrementally</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3d" name="q3" class="mr-2">
+                                            <label for="q3d">Address Concerns Proactively</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-500">
+                                        Correct Answer: Implement Incrementally. This strategy involves starting with pilot projects that demonstrate value and build confidence, then scaling successful implementations gradually.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <button class="px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800">Submit Answers</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8 pt-4 border-t border-gray-200">
+                        <a 
+                            href="module3.html" 
+                            class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 flex items-center"
+                        >
+                            <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                            </svg>
+                            Previous Module
+                        </a>
+                        <a 
+                            href="module5.html" 
+                            class="px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800 flex items-center"
+                        >
+                            Next Module
+                            <svg class="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About This Course</h3>
+                    <p class="text-gray-300">
+                        This AI Ethics micro-credential course was developed for the University of St. Thomas to provide faculty and staff with essential knowledge and tools for ethical AI implementation.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-white">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-white">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-300">
+                        University of St. Thomas<br>
+                        2115 Summit Avenue<br>
+                        St. Paul, MN 55105<br>
+                        <a href="mailto:aiethics@stthomas.edu" class="hover:text-white">aiethics@stthomas.edu</a>
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 University of St. Thomas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

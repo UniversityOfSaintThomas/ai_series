@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Plan Builder - University of St. Thomas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .builder-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section-card {
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .section-header {
+            padding: 1rem;
+            background-color: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+            cursor: pointer;
+        }
+        .section-content {
+            padding: 1.5rem;
+        }
+        .assessment-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: #f9fafb;
+        }
+        .assessment-scale {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+        .scale-option {
+            text-align: center;
+            flex: 1;
+        }
+        .scale-option input {
+            margin-bottom: 0.25rem;
+        }
+        .preview-container {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin-top: 2rem;
+            background-color: white;
+        }
+        .preview-section {
+            margin-bottom: 1.5rem;
+        }
+        .action-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: #f9fafb;
+        }
+        .priority-high {
+            border-left: 4px solid #ef4444;
+        }
+        .priority-medium {
+            border-left: 4px solid #f59e0b;
+        }
+        .priority-low {
+            border-left: 4px solid #10b981;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-purple-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://www.stthomas.edu/media/universityrelations/graphics/logos/ustwordmark/UST-Wordmark-Primary-Purple.png" alt="University of St. Thomas Logo" class="h-10 mr-3">
+                    <div>
+                        <h1 class="text-2xl font-bold">AI Ethics Course</h1>
+                        <p class="text-sm">75-Minute Micro-Credential</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="hover:text-purple-200">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-purple-200">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-purple-200 font-semibold">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-purple-200">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-purple-200">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold mb-2">AI Ethics Action Plan Builder</h1>
+            <p class="text-gray-600 mb-4">
+                Create a comprehensive action plan for implementing ethical AI practices at your institution.
+                This tool will help you assess your current state, identify priorities, and develop specific action items
+                with a focus on both ethical considerations and environmental sustainability.
+            </p>
+            
+            <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                <h2 class="text-lg font-semibold mb-2 text-blue-800">How to Use This Tool</h2>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Complete the self-assessment to evaluate your current AI ethics practices</li>
+                    <li>Identify priority areas based on your assessment results</li>
+                    <li>Develop specific action items for each priority area</li>
+                    <li>Set timelines and assign responsibilities for implementation</li>
+                    <li>Generate a complete action plan that you can download and share</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="builder-container">
+            <div class="grid md:grid-cols-1 gap-8">
+                <div>
+                    <h2 class="text-xl font-semibold mb-4">AI Ethics Self-Assessment</h2>
+                    
+                    <!-- Governance Section -->
+                    <div class="section-card">
+                        <div class="section-header" onclick="toggleSection('governance-section')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium">Governance & Oversight</h3>
+                                <svg class="w-5 h-5 transform transition-transform" id="governance-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="section-content hidden" id="governance-section">
+                            <p class="mb-4 text-gray-700">Assess your institution's current AI governance and oversight practices:</p>
+                            
+                            <div class="assessment-item">
+                                <p class="font-medium">1. Does your institution have a formal AI ethics policy or guidelines?</p>
+                                <div class="assessment-scale">
+                                    <div class="scale-option">
+                                        <input type="radio" name="policy" value="1" id="policy-1">
+                                        <label for="policy-1">No policy</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="policy" value="2" id="policy-2">
+                                        <label for="policy-2">In development</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="policy" value="3" id="policy-3" checked>
+                                        <label for="policy-3">Basic policy</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="policy" value="4" id="policy-4">
+                                        <label for="policy-4">Comprehensive</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="policy" value="5" id="policy-5">
+                                        <label for="policy-5">Advanced</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="assessment-item">
+                                <p class="font-medium">2. Is there a designated person or committee responsible for AI ethics oversight?</p>
+                                <div class="assessment-scale">
+                                    <div class="scale-option">
+                                        <input type="radio" name="oversight" value="1" id="oversight-1">
+                                        <label for="oversight-1">None</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="oversight" value="2" id="oversight-2" checked>
+                                        <label for="oversight-2">Informal</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="oversight" value="3" id="oversight-3">
+                                        <label for="oversight-3">Designated person</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="oversight" value="4" id="oversight-4">
+                                        <label for="oversight-4">Committee</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="oversight" value="5" id="oversight-5">
+                                        <label for="oversight-5">Dedicated office</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="assessment-item">
+                                <p class="font-medium">3. How frequently are AI ethics policies reviewed and updated?</p>
+                                <div class="assessment-scale">
+                                    <div class="scale-option">
+                                        <input type="radio" name="review" value="1" id="review-1">
+                                        <label for="review-1">Never</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="review" value="2" id="review-2" checked>
+                                        <label for="review-2">Rarely</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="review" value="3" id="review-3">
+                                        <label for="review-3">Occasionally</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="review" value="4" id="review-4">
+                                        <label for="review-4">Regularly</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="review" value="5" id="review-5">
+                                        <label for="review-5">Continuously</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Education & Training Section -->
+                    <div class="section-card">
+                        <div class="section-header" onclick="toggleSection('education-section')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium">Education & Training</h3>
+                                <svg class="w-5 h-5 transform transition-transform" id="education-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="section-content hidden" id="education-section">
+                            <p class="mb-4 text-gray-700">Assess your institution's AI ethics education and training efforts:</p>
+                            
+                            <div class="assessment-item">
+                                <p class="font-medium">1. Do faculty and staff receive training on ethical AI use?</p>
+                                <div class="assessment-scale">
+                                    <div class="scale-option">
+                                        <input type="radio" name="training" value="1" id="training-1">
+                                        <label for="training-1">None</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="training" value="2" id="training-2" checked>
+                                        <label for="training-2">Minimal</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="training" value="3" id="training-3">
+                                        <label for="training-3">Basic</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="training" value="4" id="training-4">
+                                        <label for="training-4">Comprehensive</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="training" value="5" id="training-5">
+                                        <label for="training-5">Advanced</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="assessment-item">
+                                <p class="font-medium">2. Are students educated about AI ethics and responsible use?</p>
+                                <div class="assessment-scale">
+                                    <div class="scale-option">
+                                        <input type="radio" name="student-education" value="1" id="student-education-1">
+                                        <label for="student-education-1">None</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="student-education" value="2" id="student-education-2">
+                                        <label for="student-education-2">Minimal</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="student-education" value="3" id="student-education-3" checked>
+                                        <label for="student-education-3">Some courses</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="student-education" value="4" id="student-education-4">
+                                        <label for="student-education-4">Many courses</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="student-education" value="5" id="student-education-5">
+                                        <label for="student-education-5">Curriculum-wide</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="assessment-item">
+                                <p class="font-medium">3. Are resources available to help with ethical AI implementation?</p>
+                                <div class="assessment-scale">
+                                    <div class="scale-option">
+                                        <input type="radio" name="resources" value="1" id="resources-1">
+                                        <label for="resources-1">None</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="resources" value="2" id="resources-2" checked>
+                                        <label for="resources-2">Limited</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="resources" value="3" id="resources-3">
+                                        <label for="resources-3">Adequate</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="resources" value="4" id="resources-4">
+                                        <label for="resources-4">Comprehensive</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="resources" value="5" id="resources-5">
+                                        <label for="resources-5">Abundant</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Environmental Sustainability Section -->
+                    <div class="section-card">
+                        <div class="section-header" onclick="toggleSection('sustainability-section')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium">Environmental Sustainability</h3>
+                                <svg class="w-5 h-5 transform transition-transform" id="sustainability-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="section-content hidden" id="sustainability-section">
+                            <p class="mb-4 text-gray-700">Assess your institution's consideration of AI's environmental impacts:</p>
+                            
+                            <div class="assessment-item">
+                                <p class="font-medium">1. Does your institution consider the environmental impact of AI systems?</p>
+                                <div class="assessment-scale">
+                                    <div class="scale-option">
+                                        <input type="radio" name="env-consideration" value="1" id="env-consideration-1" checked>
+                                        <label for="env-consideration-1">Not at all</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="env-consideration" value="2" id="env-consideration-2">
+                                        <label for="env-consideration-2">Minimal</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="env-consideration" value="3" id="env-consideration-3">
+                                        <label for="env-consideration-3">Sometimes</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="env-consideration" value="4" id="env-consideration-4">
+                                        <label for="env-consideration-4">Usually</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="env-consideration" value="5" id="env-consideration-5">
+                                        <label for="env-consideration-5">Always</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="assessment-item">
+                                <p class="font-medium">2. Are there guidelines for energy-efficient AI use?</p>
+                                <div class="assessment-scale">
+                                    <div class="scale-option">
+                                        <input type="radio" name="energy-guidelines" value="1" id="energy-guidelines-1" checked>
+                                        <label for="energy-guidelines-1">None</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="energy-guidelines" value="2" id="energy-guidelines-2">
+                                        <label for="energy-guidelines-2">Basic</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="energy-guidelines" value="3" id="energy-guidelines-3">
+                                        <label for="energy-guidelines-3">Developing</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="energy-guidelines" value="4" id="energy-guidelines-4">
+                                        <label for="energy-guidelines-4">Comprehensive</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="energy-guidelines" value="5" id="energy-guidelines-5">
+                                        <label for="energy-guidelines-5">Advanced</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="assessment-item">
+                                <p class="font-medium">3. Is AI's environmental impact included in procurement decisions?</p>
+                                <div class="assessment-scale">
+                                    <div class="scale-option">
+                                        <input type="radio" name="procurement" value="1" id="procurement-1" checked>
+                                        <label for="procurement-1">Never</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="procurement" value="2" id="procurement-2">
+                                        <label for="procurement-2">Rarely</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="procurement" value="3" id="procurement-3">
+                                        <label for="procurement-3">Sometimes</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="procurement" value="4" id="procurement-4">
+                                        <label for="procurement-4">Usually</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="procurement" value="5" id="procurement-5">
+                                        <label for="procurement-5">Always</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Implementation & Monitoring Section -->
+                    <div class="section-card">
+                        <div class="section-header" onclick="toggleSection('implementation-section')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium">Implementation & Monitoring</h3>
+                                <svg class="w-5 h-5 transform transition-transform" id="implementation-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="section-content hidden" id="implementation-section">
+                            <p class="mb-4 text-gray-700">Assess your institution's AI ethics implementation and monitoring practices:</p>
+                            
+                            <div class="assessment-item">
+                                <p class="font-medium">1. Are AI systems assessed for ethical risks before implementation?</p>
+                                <div class="assessment-scale">
+                                    <div class="scale-option">
+                                        <input type="radio" name="risk-assessment" value="1" id="risk-assessment-1">
+                                        <label for="risk-assessment-1">Never</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="risk-assessment" value="2" id="risk-assessment-2" checked>
+                                        <label for="risk-assessment-2">Rarely</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="risk-assessment" value="3" id="risk-assessment-3">
+                                        <label for="risk-assessment-3">Sometimes</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="risk-assessment" value="4" id="risk-assessment-4">
+                                        <label for="risk-assessment-4">Usually</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="risk-assessment" value="5" id="risk-assessment-5">
+                                        <label for="risk-assessment-5">Always</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="assessment-item">
+                                <p class="font-medium">2. Is there ongoing monitoring of AI systems for ethical issues?</p>
+                                <div class="assessment-scale">
+                                    <div class="scale-option">
+                                        <input type="radio" name="monitoring" value="1" id="monitoring-1">
+                                        <label for="monitoring-1">None</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="monitoring" value="2" id="monitoring-2" checked>
+                                        <label for="monitoring-2">Minimal</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="monitoring" value="3" id="monitoring-3">
+                                        <label for="monitoring-3">Periodic</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="monitoring" value="4" id="monitoring-4">
+                                        <label for="monitoring-4">Regular</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="monitoring" value="5" id="monitoring-5">
+                                        <label for="monitoring-5">Continuous</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="assessment-item">
+                                <p class="font-medium">3. Is there a process for addressing ethical concerns when identified?</p>
+                                <div class="assessment-scale">
+                                    <div class="scale-option">
+                                        <input type="radio" name="addressing" value="1" id="addressing-1">
+                                        <label for="addressing-1">None</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="addressing" value="2" id="addressing-2" checked>
+                                        <label for="addressing-2">Ad hoc</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="addressing" value="3" id="addressing-3">
+                                        <label for="addressing-3">Basic process</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="addressing" value="4" id="addressing-4">
+                                        <label for="addressing-4">Formal process</label>
+                                    </div>
+                                    <div class="scale-option">
+                                        <input type="radio" name="addressing" value="5" id="addressing-5">
+                                        <label for="addressing-5">Comprehensive</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button id="analyze-assessment" class="px-6 py-3 bg-purple-700 text-white rounded-lg hover:bg-purple-800">
+                            Analyze Assessment Results
+                        </button>
+                    </div>
+                    
+                    <!-- Assessment Results -->
+                    <div class="mt-8 hidden" id="assessment-results">
+                        <h2 class="text-xl font-semibold mb-4">Assessment Results</h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="text-lg font-medium mb-3">Governance & Oversight</h3>
+                                <div class="flex items-center mb-2">
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-purple-600 h-2.5 rounded-full" id="governance-score-bar" style="width: 45%"></div>
+                                    </div>
+                                    <span class="ml-2 text-lg font-medium" id="governance-score">45%</span>
+                                </div>
+                                <p class="text-gray-600" id="governance-recommendation">Your governance structures need improvement. Consider establishing formal AI ethics policies and oversight mechanisms.</p>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="text-lg font-medium mb-3">Education & Training</h3>
+                                <div class="flex items-center mb-2">
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-purple-600 h-2.5 rounded-full" id="education-score-bar" style="width: 40%"></div>
+                                    </div>
+                                    <span class="ml-2 text-lg font-medium" id="education-score">40%</span>
+                                </div>
+                                <p class="text-gray-600" id="education-recommendation">Your education and training programs are limited. Develop more comprehensive training for faculty, staff, and students.</p>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="text-lg font-medium mb-3">Environmental Sustainability</h3>
+                                <div class="flex items-center mb-2">
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-purple-600 h-2.5 rounded-full" id="sustainability-score-bar" style="width: 20%"></div>
+                                    </div>
+                                    <span class="ml-2 text-lg font-medium" id="sustainability-score">20%</span>
+                                </div>
+                                <p class="text-gray-600" id="sustainability-recommendation">Environmental considerations are largely absent from your AI practices. This is a critical area for improvement.</p>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="text-lg font-medium mb-3">Implementation & Monitoring</h3>
+                                <div class="flex items-center mb-2">
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-purple-600 h-2.5 rounded-full" id="implementation-score-bar" style="width: 35%"></div>
+                                    </div>
+                                    <span class="ml-2 text-lg font-medium" id="implementation-score">35%</span>
+                                </div>
+                                <p class="text-gray-600" id="implementation-recommendation">Your implementation and monitoring practices need significant enhancement. Develop formal risk assessment and monitoring processes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-lg font-medium mb-3">Priority Areas for Action</h3>
+                            <ol class="list-decimal pl-5 space-y-2">
+                                <li class="font-medium text-red-700">Environmental Sustainability (20%)</li>
+                                <li class="font-medium text-yellow-600">Implementation & Monitoring (35%)</li>
+                                <li class="font-medium text-yellow-600">Education & Training (40%)</li>
+                                <li class="font-medium text-yellow-600">Governance & Oversight (45%)</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Plan Builder -->
+                    <div class="mt-8 hidden" id="action-plan-builder">
+                        <h2 class="text-xl font-semibold mb-4">Develop Your Action Plan</h2>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                            <h3 class="text-lg font-medium mb-3">Action Plan Information</h3>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Institution Name</label>
+                                    <input type="text" id="institution-name" class="w-full p-2 border border-gray-300 rounded-md" placeholder="University of St. Thomas">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Department/Unit</label>
+                                    <input type="text" id="department" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Academic Affairs">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Plan Coordinator</label>
+                                    <input type="text" id="coordinator" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Dr. Jane Smith">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Implementation Timeframe</label>
+                                    <select id="timeframe" class="w-full p-2 border border-gray-300 rounded-md">
+                                        <option value="3 months">3 months</option>
+                                        <option value="6 months" selected>6 months</option>
+                                        <option value="1 year">1 year</option>
+                                        <option value="2 years">2 years</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Environmental Sustainability Actions -->
+                        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                            <h3 class="text-lg font-medium mb-3 text-red-700">Priority 1: Environmental Sustainability</h3>
+                            
+                            <div class="action-item priority-high">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium">Action 1: Develop AI Environmental Impact Guidelines</h4>
+                                    <span class="text-sm bg-red-100 text-red-800 px-2 py-1 rounded">High Priority</span>
+                                </div>
+                                <div class="mt-3 grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                                        <textarea id="env-action1-desc" rows="3" class="w-full p-2 border border-gray-300 rounded-md">Create comprehensive guidelines for assessing and minimizing the environmental impact of AI systems used at the institution.</textarea>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Implementation Steps</label>
+                                        <textarea id="env-action1-steps" rows="3" class="w-full p-2 border border-gray-300 rounded-md">1. Research best practices
+2. Draft initial guidelines
+3. Gather feedback from stakeholders
+4. Finalize and publish guidelines
+5. Develop implementation plan</textarea>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Responsible Parties</label>
+                                        <input type="text" id="env-action1-responsible" class="w-full p-2 border border-gray-300 rounded-md" value="Sustainability Office, IT Department">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Timeline</label>
+                                        <input type="text" id="env-action1-timeline" class="w-full p-2 border border-gray-300 rounded-md" value="3 months">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Success Metrics</label>
+                                        <input type="text" id="env-action1-metrics" class="w-full p-2 border border-gray-300 rounded-md" value="Published guidelines, 100% of new AI implementations following guidelines">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Resources Needed</label>
+                                        <input type="text" id="env-action1-resources" class="w-full p-2 border border-gray-300 rounded-md" value="Staff time, research materials, consultation with experts">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="action-item priority-medium mt-4">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium">Action 2: Implement Energy Efficiency Requirements for AI Systems</h4>
+                                    <span class="text-sm bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Medium Priority</span>
+                                </div>
+                                <div class="mt-3 grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                                        <textarea id="env-action2-desc" rows="3" class="w-full p-2 border border-gray-300 rounded-md">Establish energy efficiency requirements for AI systems and services used by the institution, including cloud-based AI services.</textarea>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Implementation Steps</label>
+                                        <textarea id="env-action2-steps" rows="3" class="w-full p-2 border border-gray-300 rounded-md">1. Audit current AI systems' energy usage
+2. Research energy-efficient alternatives
+3. Develop efficiency standards
+4. Update procurement policies
+5. Implement monitoring system</textarea>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Responsible Parties</label>
+                                        <input type="text" id="env-action2-responsible" class="w-full p-2 border border-gray-300 rounded-md" value="IT Department, Procurement Office">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Timeline</label>
+                                        <input type="text" id="env-action2-timeline" class="w-full p-2 border border-gray-300 rounded-md" value="4 months">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Success Metrics</label>
+                                        <input type="text" id="env-action2-metrics" class="w-full p-2 border border-gray-300 rounded-md" value="20% reduction in energy usage from AI systems within 1 year">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Resources Needed</label>
+                                        <input type="text" id="env-action2-resources" class="w-full p-2 border border-gray-300 rounded-md" value="Energy monitoring tools, staff time, potential budget for system upgrades">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <button id="add-env-action" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
+                                    + Add Another Action
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Implementation & Monitoring Actions -->
+                        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                            <h3 class="text-lg font-medium mb-3 text-yellow-600">Priority 2: Implementation & Monitoring</h3>
+                            
+                            <div class="action-item priority-high">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium">Action 1: Develop AI Ethics Risk Assessment Process</h4>
+                                    <span class="text-sm bg-red-100 text-red-800 px-2 py-1 rounded">High Priority</span>
+                                </div>
+                                <div class="mt-3 grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                                        <textarea id="impl-action1-desc" rows="3" class="w-full p-2 border border-gray-300 rounded-md">Create a formal process for assessing ethical risks before implementing new AI systems or making significant changes to existing systems.</textarea>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Implementation Steps</label>
+                                        <textarea id="impl-action1-steps" rows="3" class="w-full p-2 border border-gray-300 rounded-md">1. Research risk assessment frameworks
+2. Develop assessment questionnaire
+3. Create review process
+4. Train staff on assessment procedures
+5. Pilot with upcoming AI implementations</textarea>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Responsible Parties</label>
+                                        <input type="text" id="impl-action1-responsible" class="w-full p-2 border border-gray-300 rounded-md" value="Ethics Committee, IT Department">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Timeline</label>
+                                        <input type="text" id="impl-action1-timeline" class="w-full p-2 border border-gray-300 rounded-md" value="3 months">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Success Metrics</label>
+                                        <input type="text" id="impl-action1-metrics" class="w-full p-2 border border-gray-300 rounded-md" value="100% of new AI implementations undergo risk assessment">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Resources Needed</label>
+                                        <input type="text" id="impl-action1-resources" class="w-full p-2 border border-gray-300 rounded-md" value="Staff time, assessment tools, training materials">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <button id="add-impl-action" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
+                                    + Add Another Action
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <button id="generate-plan" class="px-6 py-3 bg-purple-700 text-white rounded-lg hover:bg-purple-800">
+                                Generate Complete Action Plan
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Plan Preview -->
+                    <div class="preview-container mt-8 hidden" id="plan-preview">
+                        <h2 class="text-2xl font-bold mb-6">AI Ethics Action Plan</h2>
+                        
+                        <div id="preview-content">
+                            <!-- Content will be generated by JavaScript -->
+                        </div>
+                        
+                        <div class="mt-6 flex space-x-4">
+                            <button id="download-plan" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                                Download Action Plan
+                            </button>
+                            <button id="edit-plan" class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
+                                Edit Action Plan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About This Course</h3>
+                    <p class="text-gray-300">
+                        This AI Ethics micro-credential course was developed for the University of St. Thomas to provide faculty and staff with essential knowledge and tools for ethical AI implementation.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-white">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-white">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-300">
+                        University of St. Thomas<br>
+                        2115 Summit Avenue<br>
+                        St. Paul, MN 55105<br>
+                        <a href="mailto:aiethics@stthomas.edu" class="hover:text-white">aiethics@stthomas.edu</a>
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 University of St. Thomas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSection(sectionId) {
+            const content = document.getElementById(sectionId);
+            const icon = document.getElementById(`${sectionId}-icon`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Analyze assessment button
+            document.getElementById('analyze-assessment').addEventListener('click', function() {
+                document.getElementById('assessment-results').classList.remove('hidden');
+                document.getElementById('action-plan-builder').classList.remove('hidden');
+                document.getElementById('assessment-results').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Generate plan button
+            document.getElementById('generate-plan').addEventListener('click', function() {
+                generateActionPlan();
+                document.getElementById('plan-preview').classList.remove('hidden');
+                document.getElementById('plan-preview').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Download plan button
+            document.getElementById('download-plan').addEventListener('click', function() {
+                alert('In a full implementation, this would download a PDF or Word document of your action plan.');
+            });
+            
+            // Edit plan button
+            document.getElementById('edit-plan').addEventListener('click', function() {
+                document.getElementById('plan-preview').classList.add('hidden');
+                document.getElementById('action-plan-builder').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Add environmental action button
+            document.getElementById('add-env-action').addEventListener('click', function() {
+                alert('In a full implementation, this would add another action item form for environmental sustainability.');
+            });
+            
+            // Add implementation action button
+            document.getElementById('add-impl-action').addEventListener('click', function() {
+                alert('In a full implementation, this would add another action item form for implementation & monitoring.');
+            });
+            
+            // Open first section by default
+            toggleSection('governance-section');
+        });
+        
+        function generateActionPlan() {
+            const institutionName = document.getElementById('institution-name').value || 'University of St. Thomas';
+            const department = document.getElementById('department').value || 'Academic Affairs';
+            const coordinator = document.getElementById('coordinator').value || 'Dr. Jane Smith';
+            const timeframe = document.getElementById('timeframe').value;
+            
+            let planContent = `
+                <div class="preview-section">
+                    <h3 class="text-xl font-semibold mb-2">Executive Summary</h3>
+                    <p>This AI Ethics Action Plan for ${institutionName} outlines a comprehensive approach to implementing ethical AI practices with a focus on environmental sustainability. Based on a thorough assessment of current practices, this plan identifies priority areas and specific actions to enhance AI ethics governance, education, sustainability considerations, and implementation monitoring over a ${timeframe} timeframe.</p>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="text-xl font-semibold mb-2">Plan Information</h3>
+                    <table class="w-full border-collapse">
+                        <tr>
+                            <td class="font-medium py-2 pr-4">Institution:</td>
+                            <td>${institutionName}</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium py-2 pr-4">Department/Unit:</td>
+                            <td>${department}</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium py-2 pr-4">Plan Coordinator:</td>
+                            <td>${coordinator}</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium py-2 pr-4">Implementation Timeframe:</td>
+                            <td>${timeframe}</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium py-2 pr-4">Date Created:</td>
+                            <td>${new Date().toLocaleDateString()}</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="text-xl font-semibold mb-2">Assessment Summary</h3>
+                    <p>A comprehensive assessment of current AI ethics practices revealed the following scores:</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                        <li>Governance & Oversight: 45%</li>
+                        <li>Education & Training: 40%</li>
+                        <li>Environmental Sustainability: 20%</li>
+                        <li>Implementation & Monitoring: 35%</li>
+                    </ul>
+                    <p class="mt-2">Based on these results, the following priority areas have been identified:</p>
+                    <ol class="list-decimal pl-5 mt-2 space-y-1">
+                        <li class="font-medium">Environmental Sustainability (Critical Priority)</li>
+                        <li>Implementation & Monitoring (High Priority)</li>
+                        <li>Education & Training (Medium Priority)</li>
+                        <li>Governance & Oversight (Medium Priority)</li>
+                    </ol>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="text-xl font-semibold mb-4">Action Plan</h3>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-lg font-medium mb-2 text-red-700">Priority 1: Environmental Sustainability</h4>
+                        
+                        <div class="mb-4 border-l-4 border-red-500 pl-4 py-2">
+                            <h5 class="font-medium">Action 1: Develop AI Environmental Impact Guidelines</h5>
+                            <p class="text-sm text-gray-700 mt-1">${document.getElementById('env-action1-desc').value}</p>
+                            <div class="mt-2 grid md:grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                                <div>
+                                    <span class="font-medium">Implementation Steps:</span>
+                                    <p class="text-gray-700">${document.getElementById('env-action1-steps').value.replace(/\n/g, '<br>')}</p>
+                                </div>
+                                <div>
+                                    <span class="font-medium">Responsible Parties:</span>
+                                    <p class="text-gray-700">${document.getElementById('env-action1-responsible').value}</p>
+                                </div>
+                                <div>
+                                    <span class="font-medium">Timeline:</span>
+                                    <p class="text-gray-700">${document.getElementById('env-action1-timeline').value}</p>
+                                </div>
+                                <div>
+                                    <span class="font-medium">Success Metrics:</span>
+                                    <p class="text-gray-700">${document.getElementById('env-action1-metrics').value}</p>
+                                </div>
+                                <div>
+                                    <span class="font-medium">Resources Needed:</span>
+                                    <p class="text-gray-700">${document.getElementById('env-action1-resources').value}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4 border-l-4 border-yellow-500 pl-4 py-2">
+                            <h5 class="font-medium">Action 2: Implement Energy Efficiency Requirements for AI Systems</h5>
+                            <p class="text-sm text-gray-700 mt-1">${document.getElementById('env-action2-desc').value}</p>
+                            <div class="mt-2 grid md:grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                                <div>
+                                    <span class="font-medium">Implementation Steps:</span>
+                                    <p class="text-gray-700">${document.getElementById('env-action2-steps').value.replace(/\n/g, '<br>')}</p>
+                                </div>
+                                <div>
+                                    <span class="font-medium">Responsible Parties:</span>
+                                    <p class="text-gray-700">${document.getElementById('env-action2-responsible').value}</p>
+                                </div>
+                                <div>
+                                    <span class="font-medium">Timeline:</span>
+                                    <p class="text-gray-700">${document.getElementById('env-action2-timeline').value}</p>
+                                </div>
+                                <div>
+                                    <span class="font-medium">Success Metrics:</span>
+                                    <p class="text-gray-700">${document.getElementById('env-action2-metrics').value}</p>
+                                </div>
+                                <div>
+                                    <span class="font-medium">Resources Needed:</span>
+                                    <p class="text-gray-700">${document.getElementById('env-action2-resources').value}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-lg font-medium mb-2 text-yellow-600">Priority 2: Implementation & Monitoring</h4>
+                        
+                        <div class="mb-4 border-l-4 border-red-500 pl-4 py-2">
+                            <h5 class="font-medium">Action 1: Develop AI Ethics Risk Assessment Process</h5>
+                            <p class="text-sm text-gray-700 mt-1">${document.getElementById('impl-action1-desc').value}</p>
+                            <div class="mt-2 grid md:grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                                <div>
+                                    <span class="font-medium">Implementation Steps:</span>
+                                    <p class="text-gray-700">${document.getElementById('impl-action1-steps').value.replace(/\n/g, '<br>')}</p>
+                                </div>
+                                <div>
+                                    <span class="font-medium">Responsible Parties:</span>
+                                    <p class="text-gray-700">${document.getElementById('impl-action1-responsible').value}</p>
+                                </div>
+                                <div>
+                                    <span class="font-medium">Timeline:</span>
+                                    <p class="text-gray-700">${document.getElementById('impl-action1-timeline').value}</p>
+                                </div>
+                                <div>
+                                    <span class="font-medium">Success Metrics:</span>
+                                    <p class="text-gray-700">${document.getElementById('impl-action1-metrics').value}</p>
+                                </div>
+                                <div>
+                                    <span class="font-medium">Resources Needed:</span>
+                                    <p class="text-gray-700">${document.getElementById('impl-action1-resources').value}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="text-xl font-semibold mb-2">Implementation Timeline</h3>
+                    <p>The following timeline outlines the implementation schedule for all action items:</p>
+                    
+                    <div class="mt-3 overflow-x-auto">
+                        <table class="min-w-full border-collapse border border-gray-300">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="border border-gray-300 px-4 py-2 text-left">Action Item</th>
+                                    <th class="border border-gray-300 px-4 py-2 text-left">Month 1</th>
+                                    <th class="border border-gray-300 px-4 py-2 text-left">Month 2</th>
+                                    <th class="border border-gray-300 px-4 py-2 text-left">Month 3</th>
+                                    <th class="border border-gray-300 px-4 py-2 text-left">Month 4</th>
+                                    <th class="border border-gray-300 px-4 py-2 text-left">Month 5</th>
+                                    <th class="border border-gray-300 px-4 py-2 text-left">Month 6</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-300 px-4 py-2">Develop AI Environmental Impact Guidelines</td>
+                                    <td class="border border-gray-300 px-4 py-2 bg-purple-200"></td>
+                                    <td class="border border-gray-300 px-4 py-2 bg-purple-200"></td>
+                                    <td class="border border-gray-300 px-4 py-2 bg-purple-200"></td>
+                                    <td class="border border-gray-300 px-4 py-2"></td>
+                                    <td class="border border-gray-300 px-4 py-2"></td>
+                                    <td class="border border-gray-300 px-4 py-2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-300 px-4 py-2">Implement Energy Efficiency Requirements</td>
+                                    <td class="border border-gray-300 px-4 py-2"></td>
+                                    <td class="border border-gray-300 px-4 py-2 bg-purple-200"></td>
+                                    <td class="border border-gray-300 px-4 py-2 bg-purple-200"></td>
+                                    <td class="border border-gray-300 px-4 py-2 bg-purple-200"></td>
+                                    <td class="border border-gray-300 px-4 py-2 bg-purple-200"></td>
+                                    <td class="border border-gray-300 px-4 py-2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-300 px-4 py-2">Develop AI Ethics Risk Assessment Process</td>
+                                    <td class="border border-gray-300 px-4 py-2 bg-purple-200"></td>
+                                    <td class="border border-gray-300 px-4 py-2 bg-purple-200"></td>
+                                    <td class="border border-gray-300 px-4 py-2 bg-purple-200"></td>
+                                    <td class="border border-gray-300 px-4 py-2"></td>
+                                    <td class="border border-gray-300 px-4 py-2"></td>
+                                    <td class="border border-gray-300 px-4 py-2"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <h3 class="text-xl font-semibold mb-2">Monitoring and Evaluation</h3>
+                    <p>Progress on this action plan will be monitored as follows:</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                        <li>Monthly progress reports from action item owners</li>
+                        <li>Quarterly review meetings with all stakeholders</li>
+                        <li>Mid-point comprehensive evaluation at 3 months</li>
+                        <li>Final evaluation at 6 months with recommendations for next steps</li>
+                    </ul>
+                    <p class="mt-2">Success metrics for each action item will be tracked and reported. The plan will be adjusted as needed based on implementation experience and emerging best practices.</p>
+                </div>
+            `;
+            
+            document.getElementById('preview-content').innerHTML = planContent;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus Builder - University of St. Thomas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .builder-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section-card {
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .section-header {
+            padding: 1rem;
+            background-color: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+            cursor: pointer;
+        }
+        .section-content {
+            padding: 1.5rem;
+        }
+        .checkbox-item {
+            margin-bottom: 0.75rem;
+        }
+        .preview-container {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin-top: 2rem;
+            background-color: white;
+        }
+        .preview-section {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-purple-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://www.stthomas.edu/media/universityrelations/graphics/logos/ustwordmark/UST-Wordmark-Primary-Purple.png" alt="University of St. Thomas Logo" class="h-10 mr-3">
+                    <div>
+                        <h1 class="text-2xl font-bold">AI Ethics Course</h1>
+                        <p class="text-sm">75-Minute Micro-Credential</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="hover:text-purple-200">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-purple-200">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-purple-200 font-semibold">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-purple-200">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-purple-200">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold mb-2">AI Ethics Syllabus Builder</h1>
+            <p class="text-gray-600 mb-4">
+                Create a customized AI ethics policy for your course syllabus by selecting the components that best fit your needs.
+                This tool will help you develop clear guidelines for AI use in your courses while addressing key ethical considerations.
+            </p>
+            
+            <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                <h2 class="text-lg font-semibold mb-2 text-blue-800">How to Use This Tool</h2>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Expand each section to view available policy components</li>
+                    <li>Check the boxes for components you want to include</li>
+                    <li>Customize the text in the provided fields as needed</li>
+                    <li>Preview your complete AI ethics policy at the bottom</li>
+                    <li>Copy the final text to include in your syllabus</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="builder-container">
+            <div class="grid md:grid-cols-1 gap-8">
+                <div>
+                    <h2 class="text-xl font-semibold mb-4">AI Ethics Policy Builder</h2>
+                    
+                    <!-- Introduction Section -->
+                    <div class="section-card">
+                        <div class="section-header" onclick="toggleSection('intro-section')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium">Introduction to AI Policy</h3>
+                                <svg class="w-5 h-5 transform transition-transform" id="intro-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="section-content hidden" id="intro-section">
+                            <p class="mb-4 text-gray-700">Select an introduction for your AI ethics policy:</p>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="intro" data-id="balanced" checked>
+                                    <div>
+                                        <p class="font-medium">Balanced Approach</p>
+                                        <p class="text-sm text-gray-600">Acknowledges both benefits and ethical considerations of AI tools.</p>
+                                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm">
+                                            <p>This course recognizes the evolving landscape of artificial intelligence (AI) tools in education. While these tools can enhance learning and productivity, they also raise important ethical considerations. This policy outlines appropriate and ethical use of AI tools in this course, balancing innovation with academic integrity.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="intro" data-id="cautious">
+                                    <div>
+                                        <p class="font-medium">Cautious Approach</p>
+                                        <p class="text-sm text-gray-600">Emphasizes careful consideration and potential risks of AI tools.</p>
+                                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm">
+                                            <p>This course acknowledges the increasing presence of artificial intelligence (AI) tools in education. While these tools have potential applications, they also present significant ethical challenges and risks. This policy establishes guidelines for the limited and carefully considered use of AI tools in this course, prioritizing academic integrity and ethical considerations.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="intro" data-id="progressive">
+                                    <div>
+                                        <p class="font-medium">Progressive Approach</p>
+                                        <p class="text-sm text-gray-600">Emphasizes embracing AI tools while teaching responsible use.</p>
+                                        <div class="mt-2 p-3 bg-gray-50 rounded text-sm">
+                                            <p>This course embraces the transformative potential of artificial intelligence (AI) tools in education. Learning to use these tools effectively and ethically is an important skill for your future. This policy outlines how we will incorporate AI tools into our learning activities while developing critical thinking about their appropriate and ethical use.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Custom Introduction (Optional)</label>
+                                <textarea id="custom-intro" rows="4" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Write your own introduction..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Permitted Uses Section -->
+                    <div class="section-card">
+                        <div class="section-header" onclick="toggleSection('permitted-section')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium">Permitted Uses of AI</h3>
+                                <svg class="w-5 h-5 transform transition-transform" id="permitted-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="section-content hidden" id="permitted-section">
+                            <p class="mb-4 text-gray-700">Select permitted uses of AI in your course:</p>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="permitted" data-id="brainstorming" checked>
+                                    <div>
+                                        <p class="font-medium">Brainstorming and Ideation</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>Students may use AI tools for initial brainstorming and generating ideas. However, these ideas must be critically evaluated, refined, and developed by the student.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="permitted" data-id="research" checked>
+                                    <div>
+                                        <p class="font-medium">Research Assistance</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>AI tools may be used to help locate relevant sources or summarize information. However, students must independently verify all information, consult primary sources, and properly cite all references.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="permitted" data-id="feedback">
+                                    <div>
+                                        <p class="font-medium">Feedback and Revision</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>Students may use AI tools to receive feedback on drafts, identify grammatical errors, or suggest improvements to clarity. The student remains responsible for all revisions and final content.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="permitted" data-id="learning">
+                                    <div>
+                                        <p class="font-medium">Learning Assistance</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>AI tools may be used to explain complex concepts, provide additional examples, or help students understand course material. Students should verify information with course materials and consult with the instructor when discrepancies arise.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="permitted" data-id="accessibility">
+                                    <div>
+                                        <p class="font-medium">Accessibility Support</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>Students may use AI tools as accessibility aids (e.g., transcription, summarization, or explanation of complex text) when needed to support diverse learning needs.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Additional Permitted Uses (Optional)</label>
+                                <textarea id="custom-permitted" rows="3" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Add other permitted uses..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Prohibited Uses Section -->
+                    <div class="section-card">
+                        <div class="section-header" onclick="toggleSection('prohibited-section')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium">Prohibited Uses of AI</h3>
+                                <svg class="w-5 h-5 transform transition-transform" id="prohibited-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="section-content hidden" id="prohibited-section">
+                            <p class="mb-4 text-gray-700">Select prohibited uses of AI in your course:</p>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="prohibited" data-id="complete-assignments" checked>
+                                    <div>
+                                        <p class="font-medium">Completing Assignments</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>Using AI tools to generate complete assignments, essays, or projects that are submitted as the student's own work is prohibited and constitutes academic dishonesty.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="prohibited" data-id="exams" checked>
+                                    <div>
+                                        <p class="font-medium">Exams and Assessments</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>Using AI tools during exams, quizzes, or other assessments is prohibited unless explicitly permitted by the instructor. This includes using AI to answer exam questions or solve problems.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="prohibited" data-id="plagiarism">
+                                    <div>
+                                        <p class="font-medium">Plagiarism and Misrepresentation</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>Submitting AI-generated content without proper attribution or presenting it as your own original work constitutes plagiarism and violates academic integrity policies.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="prohibited" data-id="sensitive-data">
+                                    <div>
+                                        <p class="font-medium">Sharing Sensitive Data</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>Inputting confidential, sensitive, or personal information (about yourself or others) into public AI tools is prohibited due to privacy and data security concerns.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="prohibited" data-id="bypassing">
+                                    <div>
+                                        <p class="font-medium">Bypassing Learning Objectives</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>Using AI to bypass the learning process or avoid developing skills that are central to the course objectives is prohibited, as it undermines the educational purpose of assignments.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Additional Prohibited Uses (Optional)</label>
+                                <textarea id="custom-prohibited" rows="3" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Add other prohibited uses..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Disclosure Requirements Section -->
+                    <div class="section-card">
+                        <div class="section-header" onclick="toggleSection('disclosure-section')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium">Disclosure Requirements</h3>
+                                <svg class="w-5 h-5 transform transition-transform" id="disclosure-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="section-content hidden" id="disclosure-section">
+                            <p class="mb-4 text-gray-700">Select disclosure requirements for AI use:</p>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="disclosure" data-id="citation" checked>
+                                    <div>
+                                        <p class="font-medium">Citation and Attribution</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>When AI tools are used in the creation of submitted work, students must provide clear attribution, including the name of the tool used, the specific prompt(s), and the extent of AI contribution to the final work.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="disclosure" data-id="reflection">
+                                    <div>
+                                        <p class="font-medium">Reflection on AI Use</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>For assignments where AI tools are used, students must include a brief reflection discussing how the tool was used, how the AI-generated content was evaluated and refined, and what was learned from the process.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="disclosure" data-id="prior-approval">
+                                    <div>
+                                        <p class="font-medium">Prior Approval</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>Students must obtain instructor approval before using AI tools for substantive contributions to assignments. Requests should specify which tool will be used and how it will be utilized.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="disclosure" data-id="submission-note">
+                                    <div>
+                                        <p class="font-medium">Submission Note</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>All submitted work must include a disclosure statement indicating whether AI tools were used in its creation. If no AI tools were used, this should be explicitly stated.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Additional Disclosure Requirements (Optional)</label>
+                                <textarea id="custom-disclosure" rows="3" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Add other disclosure requirements..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sustainability Considerations Section -->
+                    <div class="section-card">
+                        <div class="section-header" onclick="toggleSection('sustainability-section')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium">Sustainability Considerations</h3>
+                                <svg class="w-5 h-5 transform transition-transform" id="sustainability-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="section-content hidden" id="sustainability-section">
+                            <p class="mb-4 text-gray-700">Select sustainability considerations for AI use:</p>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="sustainability" data-id="awareness" checked>
+                                    <div>
+                                        <p class="font-medium">Environmental Impact Awareness</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>Students should be aware that large AI models have significant environmental impacts, including high energy consumption and associated carbon emissions. Consider the necessity of AI use for each task.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="sustainability" data-id="efficient-use">
+                                    <div>
+                                        <p class="font-medium">Efficient Use Guidelines</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>When using AI tools, students should practice efficient use by crafting specific prompts, limiting unnecessary iterations, and using smaller or more efficient models when they meet the need.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="sustainability" data-id="reflection-impact">
+                                    <div>
+                                        <p class="font-medium">Impact Reflection</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>For assignments involving significant AI use, students should include a brief reflection on the environmental implications of their AI usage and how they attempted to minimize unnecessary environmental impact.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Additional Sustainability Considerations (Optional)</label>
+                                <textarea id="custom-sustainability" rows="3" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Add other sustainability considerations..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Consequences Section -->
+                    <div class="section-card">
+                        <div class="section-header" onclick="toggleSection('consequences-section')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium">Consequences for Policy Violations</h3>
+                                <svg class="w-5 h-5 transform transition-transform" id="consequences-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="section-content hidden" id="consequences-section">
+                            <p class="mb-4 text-gray-700">Select consequences for policy violations:</p>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="consequences" data-id="academic-integrity" checked>
+                                    <div>
+                                        <p class="font-medium">Academic Integrity Violations</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>Unauthorized use of AI tools or failure to properly disclose AI use may be considered an academic integrity violation. Such violations will be addressed according to the university's academic integrity policy, which may include grade penalties, course failure, or other sanctions.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="consequences" data-id="educational-response">
+                                    <div>
+                                        <p class="font-medium">Educational Response</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>First-time or minor violations may be addressed as educational opportunities. Students may be required to redo the assignment without AI assistance, complete an additional reflection on ethical AI use, or participate in a discussion about academic integrity.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="consequences" data-id="grading-penalties">
+                                    <div>
+                                        <p class="font-medium">Grading Penalties</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>Inappropriate AI use may result in grade reductions or zero credit for the affected assignment. Repeated or severe violations may impact the final course grade.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Additional Consequences (Optional)</label>
+                                <textarea id="custom-consequences" rows="3" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Add other consequences..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Support and Resources Section -->
+                    <div class="section-card">
+                        <div class="section-header" onclick="toggleSection('resources-section')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-medium">Support and Resources</h3>
+                                <svg class="w-5 h-5 transform transition-transform" id="resources-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="section-content hidden" id="resources-section">
+                            <p class="mb-4 text-gray-700">Select support and resources to include:</p>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="resources" data-id="instructor-guidance" checked>
+                                    <div>
+                                        <p class="font-medium">Instructor Guidance</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>Students are encouraged to consult with the instructor if they have questions about appropriate AI use for specific assignments. Office hours and email consultations are available to discuss ethical AI use in the context of this course.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="resources" data-id="university-resources">
+                                    <div>
+                                        <p class="font-medium">University Resources</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>The university provides resources on academic integrity, ethical technology use, and AI literacy. Students can access these resources through the university library, academic success center, and technology services.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2" data-section="resources" data-id="workshops">
+                                    <div>
+                                        <p class="font-medium">Workshops and Training</p>
+                                        <div class="mt-1 text-sm">
+                                            <p>The university offers workshops on ethical AI use, critical evaluation of AI-generated content, and effective prompting techniques. Students are encouraged to participate in these opportunities to develop their AI literacy.</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Additional Resources (Optional)</label>
+                                <textarea id="custom-resources" rows="3" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Add other resources..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button id="generate-policy" class="px-6 py-3 bg-purple-700 text-white rounded-lg hover:bg-purple-800">
+                            Generate AI Ethics Policy
+                        </button>
+                    </div>
+                    
+                    <!-- Policy Preview -->
+                    <div class="preview-container mt-8 hidden" id="policy-preview">
+                        <h2 class="text-2xl font-bold mb-6">AI Ethics Policy Preview</h2>
+                        
+                        <div id="preview-content">
+                            <!-- Content will be generated by JavaScript -->
+                        </div>
+                        
+                        <div class="mt-6 flex space-x-4">
+                            <button id="copy-policy" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                                Copy to Clipboard
+                            </button>
+                            <button id="edit-policy" class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
+                                Edit Policy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About This Course</h3>
+                    <p class="text-gray-300">
+                        This AI Ethics micro-credential course was developed for the University of St. Thomas to provide faculty and staff with essential knowledge and tools for ethical AI implementation.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-white">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-white">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-300">
+                        University of St. Thomas<br>
+                        2115 Summit Avenue<br>
+                        St. Paul, MN 55105<br>
+                        <a href="mailto:aiethics@stthomas.edu" class="hover:text-white">aiethics@stthomas.edu</a>
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 University of St. Thomas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSection(sectionId) {
+            const content = document.getElementById(sectionId);
+            const icon = document.getElementById(`${sectionId}-icon`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure only one introduction option is selected at a time
+            document.querySelectorAll('input[data-section="intro"]').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        document.querySelectorAll('input[data-section="intro"]').forEach(cb => {
+                            if (cb !== this) cb.checked = false;
+                        });
+                    }
+                });
+            });
+            
+            // Generate policy button
+            document.getElementById('generate-policy').addEventListener('click', function() {
+                generatePolicy();
+                document.getElementById('policy-preview').classList.remove('hidden');
+                document.getElementById('policy-preview').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Copy to clipboard button
+            document.getElementById('copy-policy').addEventListener('click', function() {
+                const policyText = document.getElementById('preview-content').innerText;
+                navigator.clipboard.writeText(policyText).then(function() {
+                    alert('Policy copied to clipboard!');
+                }, function() {
+                    alert('Failed to copy policy. Please select and copy manually.');
+                });
+            });
+            
+            // Edit policy button
+            document.getElementById('edit-policy').addEventListener('click', function() {
+                document.getElementById('policy-preview').classList.add('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Open first section by default
+            toggleSection('intro-section');
+        });
+        
+        function generatePolicy() {
+            let policyContent = '';
+            
+            // Introduction
+            const introCheckbox = document.querySelector('input[data-section="intro"]:checked');
+            if (introCheckbox) {
+                const introId = introCheckbox.getAttribute('data-id');
+                const introText = introCheckbox.closest('.checkbox-item').querySelector('.mt-2 p').textContent;
+                policyContent += `<div class="preview-section">
+                    <h3 class="text-xl font-semibold mb-2">AI Ethics Policy</h3>
+                    <p>${introText}</p>
+                </div>`;
+            }
+            
+            const customIntro = document.getElementById('custom-intro').value;
+            if (customIntro.trim()) {
+                if (!introCheckbox) {
+                    policyContent += `<div class="preview-section">
+                        <h3 class="text-xl font-semibold mb-2">AI Ethics Policy</h3>
+                    </div>`;
+                }
+                policyContent += `<p>${customIntro}</p>`;
+            }
+            
+            // Permitted Uses
+            const permittedCheckboxes = document.querySelectorAll('input[data-section="permitted"]:checked');
+            if (permittedCheckboxes.length > 0) {
+                policyContent += `<div class="preview-section">
+                    <h3 class="text-lg font-semibold mb-2">Permitted Uses of AI</h3>
+                    <p>The following uses of AI tools are permitted in this course:</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-2">`;
+                
+                permittedCheckboxes.forEach(checkbox => {
+                    const text = checkbox.closest('.checkbox-item').querySelector('.mt-1 p').textContent;
+                    policyContent += `<li>${text}</li>`;
+                });
+                
+                const customPermitted = document.getElementById('custom-permitted').value;
+                if (customPermitted.trim()) {
+                    policyContent += `<li>${customPermitted}</li>`;
+                }
+                
+                policyContent += `</ul></div>`;
+            }
+            
+            // Prohibited Uses
+            const prohibitedCheckboxes = document.querySelectorAll('input[data-section="prohibited"]:checked');
+            if (prohibitedCheckboxes.length > 0) {
+                policyContent += `<div class="preview-section">
+                    <h3 class="text-lg font-semibold mb-2">Prohibited Uses of AI</h3>
+                    <p>The following uses of AI tools are prohibited in this course:</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-2">`;
+                
+                prohibitedCheckboxes.forEach(checkbox => {
+                    const text = checkbox.closest('.checkbox-item').querySelector('.mt-1 p').textContent;
+                    policyContent += `<li>${text}</li>`;
+                });
+                
+                const customProhibited = document.getElementById('custom-prohibited').value;
+                if (customProhibited.trim()) {
+                    policyContent += `<li>${customProhibited}</li>`;
+                }
+                
+                policyContent += `</ul></div>`;
+            }
+            
+            // Disclosure Requirements
+            const disclosureCheckboxes = document.querySelectorAll('input[data-section="disclosure"]:checked');
+            if (disclosureCheckboxes.length > 0) {
+                policyContent += `<div class="preview-section">
+                    <h3 class="text-lg font-semibold mb-2">Disclosure Requirements</h3>
+                    <p>When using AI tools in this course, students must adhere to the following disclosure requirements:</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-2">`;
+                
+                disclosureCheckboxes.forEach(checkbox => {
+                    const text = checkbox.closest('.checkbox-item').querySelector('.mt-1 p').textContent;
+                    policyContent += `<li>${text}</li>`;
+                });
+                
+                const customDisclosure = document.getElementById('custom-disclosure').value;
+                if (customDisclosure.trim()) {
+                    policyContent += `<li>${customDisclosure}</li>`;
+                }
+                
+                policyContent += `</ul></div>`;
+            }
+            
+            // Sustainability Considerations
+            const sustainabilityCheckboxes = document.querySelectorAll('input[data-section="sustainability"]:checked');
+            if (sustainabilityCheckboxes.length > 0) {
+                policyContent += `<div class="preview-section">
+                    <h3 class="text-lg font-semibold mb-2">Sustainability Considerations</h3>
+                    <p>When using AI tools, please consider the following environmental sustainability factors:</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-2">`;
+                
+                sustainabilityCheckboxes.forEach(checkbox => {
+                    const text = checkbox.closest('.checkbox-item').querySelector('.mt-1 p').textContent;
+                    policyContent += `<li>${text}</li>`;
+                });
+                
+                const customSustainability = document.getElementById('custom-sustainability').value;
+                if (customSustainability.trim()) {
+                    policyContent += `<li>${customSustainability}</li>`;
+                }
+                
+                policyContent += `</ul></div>`;
+            }
+            
+            // Consequences
+            const consequencesCheckboxes = document.querySelectorAll('input[data-section="consequences"]:checked');
+            if (consequencesCheckboxes.length > 0) {
+                policyContent += `<div class="preview-section">
+                    <h3 class="text-lg font-semibold mb-2">Consequences for Policy Violations</h3>
+                    <p>Violations of this AI ethics policy may result in the following consequences:</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-2">`;
+                
+                consequencesCheckboxes.forEach(checkbox => {
+                    const text = checkbox.closest('.checkbox-item').querySelector('.mt-1 p').textContent;
+                    policyContent += `<li>${text}</li>`;
+                });
+                
+                const customConsequences = document.getElementById('custom-consequences').value;
+                if (customConsequences.trim()) {
+                    policyContent += `<li>${customConsequences}</li>`;
+                }
+                
+                policyContent += `</ul></div>`;
+            }
+            
+            // Support and Resources
+            const resourcesCheckboxes = document.querySelectorAll('input[data-section="resources"]:checked');
+            if (resourcesCheckboxes.length > 0) {
+                policyContent += `<div class="preview-section">
+                    <h3 class="text-lg font-semibold mb-2">Support and Resources</h3>
+                    <p>The following resources are available to help you navigate ethical AI use:</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-2">`;
+                
+                resourcesCheckboxes.forEach(checkbox => {
+                    const text = checkbox.closest('.checkbox-item').querySelector('.mt-1 p').textContent;
+                    policyContent += `<li>${text}</li>`;
+                });
+                
+                const customResources = document.getElementById('custom-resources').value;
+                if (customResources.trim()) {
+                    policyContent += `<li>${customResources}</li>`;
+                }
+                
+                policyContent += `</ul></div>`;
+            }
+            
+            document.getElementById('preview-content').innerHTML = policyContent;
+        }
+    </script>
+</body>
+</html>

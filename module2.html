@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2: AI Risks, Biases, and Privacy - University of St. Thomas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-purple-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://www.stthomas.edu/media/universityrelations/graphics/logos/ustwordmark/UST-Wordmark-Primary-Purple.png" alt="University of St. Thomas Logo" class="h-10 mr-3">
+                    <div>
+                        <h1 class="text-2xl font-bold">AI Ethics Course</h1>
+                        <p class="text-sm">75-Minute Micro-Credential</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="hover:text-purple-200">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-purple-200">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-purple-200">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-purple-200">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-purple-200">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="md:col-span-1">
+                <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                    <h3 class="text-xl font-bold mb-4 text-purple-800">Module Navigation</h3>
+                    <ul class="space-y-2">
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module1.html" class="block">Module 1: AI Ethics Foundations</a>
+                        </li>
+                        <li class="bg-purple-100 rounded p-2 font-semibold">
+                            <a href="module2.html" class="block">Module 2: AI Risks, Biases, and Privacy</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module3.html" class="block">Module 3: AI Sustainability and Environmental Impact</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module4.html" class="block">Module 4: Responsible AI Integration</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module5.html" class="block">Module 5: Creating an AI Ethics Action Plan</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                    <h3 class="text-lg font-semibold mb-2">Module Resources</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a 
+                                href="https://www.stthomas.edu/media/centerforethicsincommunication/AI-Bias-Report-2025.pdf" 
+                                target="_blank"
+                                class="text-blue-600 hover:underline flex items-center"
+                            >
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                                AI Bias in Higher Education Report
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="https://www.stthomas.edu/media/centerforethicsincommunication/AI-Privacy-Guidelines-2025.pdf" 
+                                target="_blank"
+                                class="text-blue-600 hover:underline flex items-center"
+                            >
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                                AI Privacy Guidelines
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="https://www.stthomas.edu/media/centerforethicsincommunication/AI-Risk-Assessment-Tool.pdf" 
+                                target="_blank"
+                                class="text-blue-600 hover:underline flex items-center"
+                            >
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                                AI Risk Assessment Tool
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="md:col-span-3">
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h1 class="text-3xl font-bold mb-2">Module 2: AI Risks, Biases, and Privacy</h1>
+                    <div class="text-sm text-gray-500 mb-4">Estimated time: 15 minutes</div>
+                    
+                    <div class="mb-6">
+                        <h2 class="text-xl font-semibold mb-2">Learning Objectives</h2>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Identify key risks associated with AI implementation in educational settings</li>
+                            <li>Understand different types of AI bias and their impacts on diverse student populations</li>
+                            <li>Recognize privacy concerns related to AI data collection and usage</li>
+                            <li>Apply strategies to mitigate AI risks, biases, and privacy issues</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4">Understanding AI Risks in Higher Education</h2>
+                        
+                        <p class="mb-4">
+                            As artificial intelligence becomes increasingly integrated into higher education, it brings not only opportunities but also significant risks that must be carefully managed. Understanding these risks is essential for ethical AI implementation that protects students, faculty, and the educational mission.
+                        </p>
+                        
+                        <div class="my-6">
+                            <div class="aspect-w-16 aspect-h-9">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/UG_X_7g63rY" title="Understanding AI Risks in Education" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-64 rounded"></iframe>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-2">An overview of key AI risks in educational contexts</p>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Key Risk Categories</h3>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Accuracy and Reliability Risks</h4>
+                                <p>
+                                    AI systems can produce incorrect, misleading, or incomplete information, particularly when operating outside their training domains. In educational contexts, this can lead to flawed assessments, misguided advising, or the spread of misinformation.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Equity and Fairness Risks</h4>
+                                <p>
+                                    AI systems may perpetuate or amplify existing biases, potentially disadvantaging certain student groups. This is particularly concerning in high-stakes applications like admissions, financial aid allocation, or academic assessment.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Privacy and Security Risks</h4>
+                                <p>
+                                    AI often requires extensive data collection, raising concerns about student privacy, data security, and potential surveillance. Educational institutions must balance the benefits of data-driven insights with robust privacy protections.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Autonomy and Agency Risks</h4>
+                                <p>
+                                    Over-reliance on AI recommendations may diminish human judgment and agency in educational decision-making. Students, faculty, and administrators must maintain meaningful control over AI systems that affect educational outcomes.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Transparency and Explainability Risks</h4>
+                                <p>
+                                    Many AI systems operate as "black boxes," making decisions or recommendations that cannot be easily explained or understood. This lack of transparency undermines accountability and makes it difficult to identify and address problems.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="my-6">
+                            <img src="https://www.stthomas.edu/media/schoolofengineering/images/AI-Bias-Types.jpg" alt="AI Bias Types" class="w-full rounded-lg">
+                            <p class="text-sm text-gray-500 mt-2">Common types of AI bias and their manifestations in educational contexts</p>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Understanding AI Bias</h3>
+                        
+                        <p class="mb-4">
+                            AI bias refers to systematic errors in AI systems that create unfair outcomes for particular groups. In educational contexts, bias can manifest in various ways:
+                        </p>
+                        
+                        <div class="overflow-x-auto mb-6">
+                            <table class="min-w-full bg-white border border-gray-200">
+                                <thead>
+                                    <tr>
+                                        <th class="py-2 px-4 border-b">Bias Type</th>
+                                        <th class="py-2 px-4 border-b">Description</th>
+                                        <th class="py-2 px-4 border-b">Educational Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Data Bias</td>
+                                        <td class="py-2 px-4 border-b">Occurs when training data is not representative of all populations</td>
+                                        <td class="py-2 px-4 border-b">AI writing feedback trained primarily on essays from native English speakers may disadvantage ESL students</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Algorithmic Bias</td>
+                                        <td class="py-2 px-4 border-b">Stems from flawed algorithm design or implementation</td>
+                                        <td class="py-2 px-4 border-b">Predictive analytics that weigh certain factors more heavily may disadvantage non-traditional students</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Historical Bias</td>
+                                        <td class="py-2 px-4 border-b">Reflects and perpetuates historical inequities</td>
+                                        <td class="py-2 px-4 border-b">Admissions algorithms trained on historical data may replicate past discriminatory patterns</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Representation Bias</td>
+                                        <td class="py-2 px-4 border-b">Occurs when certain groups are underrepresented in the system</td>
+                                        <td class="py-2 px-4 border-b">Course recommendation systems may not account for the needs of students with disabilities</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Measurement Bias</td>
+                                        <td class="py-2 px-4 border-b">Results from using proxies that don't accurately measure the intended attribute</td>
+                                        <td class="py-2 px-4 border-b">Using standardized test scores as the primary measure of student potential may disadvantage certain groups</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Privacy Considerations in AI</h3>
+                        
+                        <p class="mb-4">
+                            AI systems in education often collect and process vast amounts of student data, raising important privacy considerations:
+                        </p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold mb-1">Data Collection Scope</h4>
+                                <p>
+                                    AI systems may collect more data than necessary, including sensitive information about students' learning patterns, behaviors, and personal characteristics. Educational institutions must carefully consider what data is truly needed.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold mb-1">Informed Consent</h4>
+                                <p>
+                                    Students should understand what data is being collected, how it will be used, and who will have access to it. Meaningful consent requires clear, accessible explanations of AI systems and their data practices.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold mb-1">Data Security</h4>
+                                <p>
+                                    Educational data is valuable and vulnerable to security breaches. Institutions must implement robust security measures to protect student data from unauthorized access or misuse.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold mb-1">Regulatory Compliance</h4>
+                                <p>
+                                    AI implementations must comply with relevant privacy regulations such as FERPA, GDPR, or state-specific privacy laws. This includes provisions for data access, correction, and deletion.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold mb-1">Surveillance Concerns</h4>
+                                <p>
+                                    AI monitoring tools can create environments where students feel constantly surveilled, potentially chilling academic freedom and creating psychological stress. Institutions should balance monitoring with respect for autonomy.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Strategies for Mitigating AI Risks</h3>
+                        
+                        <p class="mb-4">
+                            Educational institutions can implement several strategies to address AI risks, biases, and privacy concerns:
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Risk Assessment</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Conduct thorough risk assessments before implementing AI systems</li>
+                                    <li>Categorize applications by risk level and apply appropriate safeguards</li>
+                                    <li>Regularly review and update risk assessments as systems evolve</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Bias Testing and Mitigation</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Test AI systems for bias across different demographic groups</li>
+                                    <li>Use diverse and representative training data</li>
+                                    <li>Implement algorithmic fairness techniques</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Privacy by Design</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Incorporate privacy considerations from the beginning of AI projects</li>
+                                    <li>Minimize data collection to what's necessary</li>
+                                    <li>Implement strong data security measures</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Transparency and Explainability</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Choose more explainable AI models when possible</li>
+                                    <li>Provide clear explanations of how AI systems make decisions</li>
+                                    <li>Document limitations and potential biases</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Human Oversight</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Maintain meaningful human review of AI decisions</li>
+                                    <li>Establish clear processes for contesting AI outcomes</li>
+                                    <li>Provide training on AI capabilities and limitations</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Inclusive Development</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Include diverse stakeholders in AI development and implementation</li>
+                                    <li>Consult with representatives from potentially affected groups</li>
+                                    <li>Create feedback mechanisms for ongoing improvement</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                            <h4 class="font-semibold mb-2">Case Example: Addressing Bias in Admissions</h4>
+                            <p class="mb-3">
+                                A university discovered that its AI-powered admissions screening tool was inadvertently disadvantaging applicants from certain geographic regions and socioeconomic backgrounds, despite not explicitly considering these factors.
+                            </p>
+                            <p class="mb-3">
+                                <strong>Mitigation Approach:</strong> The university took several steps to address this issue:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-1 mb-3">
+                                <li>Conducted a thorough audit of the algorithm to identify sources of bias</li>
+                                <li>Rebalanced the training data to ensure better representation of diverse applicants</li>
+                                <li>Modified the algorithm to reduce reliance on factors correlated with socioeconomic status</li>
+                                <li>Implemented a "fairness constraint" that ensured similar acceptance rates across different demographic groups with similar qualifications</li>
+                                <li>Established a human review process for applications flagged by the system</li>
+                                <li>Created a monitoring system to track outcomes across demographic groups</li>
+                            </ul>
+                            <p>
+                                This comprehensive approach significantly reduced disparities in admissions outcomes while maintaining the efficiency benefits of the AI system.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4">Module Assessment</h2>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-4">Knowledge Check</h3>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <p class="font-medium mb-2">1. Which of the following is an example of data bias in educational AI?</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1a" name="q1" class="mr-2">
+                                            <label for="q1a">An AI system that requires students to have high-speed internet access</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1b" name="q1" class="mr-2">
+                                            <label for="q1b">A writing feedback tool trained primarily on essays from native English speakers</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1c" name="q1" class="mr-2">
+                                            <label for="q1c">An admissions system that weighs standardized test scores more heavily than other factors</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1d" name="q1" class="mr-2">
+                                            <label for="q1d">A course recommendation system that doesn't explain its suggestions</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-500">
+                                        Correct Answer: A writing feedback tool trained primarily on essays from native English speakers. This is an example of data bias because the training data is not representative of all student populations.
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <p class="font-medium mb-2">2. Which privacy principle emphasizes collecting only the minimum amount of data necessary for a specific purpose?</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2a" name="q2" class="mr-2">
+                                            <label for="q2a">Data transparency</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2b" name="q2" class="mr-2">
+                                            <label for="q2b">Data minimization</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2c" name="q2" class="mr-2">
+                                            <label for="q2c">Data security</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2d" name="q2" class="mr-2">
+                                            <label for="q2d">Data consent</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-500">
+                                        Correct Answer: Data minimization. This principle states that organizations should collect only the minimum amount of data necessary to fulfill a specific purpose, reducing privacy risks.
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <p class="font-medium mb-2">3. Which of the following is the most effective approach to mitigating AI bias in educational settings?</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3a" name="q3" class="mr-2">
+                                            <label for="q3a">Using AI only for low-stakes decisions</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3b" name="q3" class="mr-2">
+                                            <label for="q3b">Implementing a comprehensive approach including diverse training data, algorithmic fairness techniques, and ongoing monitoring</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3c" name="q3" class="mr-2">
+                                            <label for="q3c">Relying solely on human oversight of AI decisions</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3d" name="q3" class="mr-2">
+                                            <label for="q3d">Using only the most advanced AI models available</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-500">
+                                        Correct Answer: Implementing a comprehensive approach including diverse training data, algorithmic fairness techniques, and ongoing monitoring. Addressing AI bias requires a multi-faceted approach rather than a single solution.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <button class="px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800">Submit Answers</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8 pt-4 border-t border-gray-200">
+                        <a 
+                            href="module1.html" 
+                            class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 flex items-center"
+                        >
+                            <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                            </svg>
+                            Previous Module
+                        </a>
+                        <a 
+                            href="module3.html" 
+                            class="px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800 flex items-center"
+                        >
+                            Next Module
+                            <svg class="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About This Course</h3>
+                    <p class="text-gray-300">
+                        This AI Ethics micro-credential course was developed for the University of St. Thomas to provide faculty and staff with essential knowledge and tools for ethical AI implementation.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-white">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-white">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-300">
+                        University of St. Thomas<br>
+                        2115 Summit Avenue<br>
+                        St. Paul, MN 55105<br>
+                        <a href="mailto:aiethics@stthomas.edu" class="hover:text-white">aiethics@stthomas.edu</a>
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 University of St. Thomas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

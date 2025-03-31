@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Knowledge Check - University of St. Thomas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .question {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background-color: #f9fafb;
+        }
+        .question.correct {
+            background-color: #d1fae5;
+            border-left: 4px solid #10b981;
+        }
+        .question.incorrect {
+            background-color: #fee2e2;
+            border-left: 4px solid #ef4444;
+        }
+        .option {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .option:hover {
+            background-color: #e5e7eb;
+        }
+        .option.selected {
+            background-color: #dbeafe;
+            border: 1px solid #3b82f6;
+        }
+        .option.correct {
+            background-color: #d1fae5;
+            border: 1px solid #10b981;
+        }
+        .option.incorrect {
+            background-color: #fee2e2;
+            border: 1px solid #ef4444;
+        }
+        .feedback {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+        }
+        .progress-bar {
+            height: 0.5rem;
+            border-radius: 0.25rem;
+            background-color: #e5e7eb;
+            margin-bottom: 1.5rem;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 0.25rem;
+            background-color: #8b5cf6;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-purple-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://www.stthomas.edu/media/universityrelations/graphics/logos/ustwordmark/UST-Wordmark-Primary-Purple.png" alt="University of St. Thomas Logo" class="h-10 mr-3">
+                    <div>
+                        <h1 class="text-2xl font-bold">AI Ethics Course</h1>
+                        <p class="text-sm">75-Minute Micro-Credential</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="hover:text-purple-200">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-purple-200">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-purple-200 font-semibold">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-purple-200">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-purple-200">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold mb-2">Interactive Knowledge Check</h1>
+            <p class="text-gray-600 mb-4">
+                Test your understanding of AI ethics concepts with this interactive knowledge check. 
+                Answer the questions below to assess your comprehension of key topics covered in the course.
+            </p>
+            
+            <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                <h2 class="text-lg font-semibold mb-2 text-blue-800">Instructions</h2>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Select the best answer for each question</li>
+                    <li>Click "Check Answer" to see if you're correct</li>
+                    <li>Review the feedback for each question</li>
+                    <li>Complete all questions to see your final score</li>
+                    <li>You can retake the quiz as many times as you like</li>
+                </ul>
+            </div>
+            
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-4">Your Progress</h2>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+                </div>
+                <div class="flex justify-between text-sm text-gray-600">
+                    <span>0% Complete</span>
+                    <span id="score-display">Score: 0/10</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div id="quiz">
+                <!-- Question 1 -->
+                <div class="question" id="q1">
+                    <h3 class="text-lg font-semibold mb-3">Question 1: AI Ethics Foundations</h3>
+                    <p class="mb-4">Which of the following is NOT one of the core principles of ethical AI discussed in the course?</p>
+                    
+                    <div class="options">
+                        <div class="option" data-value="a">
+                            <strong>A.</strong> Fairness and non-discrimination
+                        </div>
+                        <div class="option" data-value="b">
+                            <strong>B.</strong> Transparency and explainability
+                        </div>
+                        <div class="option" data-value="c">
+                            <strong>C.</strong> Privacy and data protection
+                        </div>
+                        <div class="option" data-value="d">
+                            <strong>D.</strong> Maximum efficiency at all costs
+                        </div>
+                    </div>
+                    
+                    <div class="feedback hidden mt-4 p-3 rounded-lg"></div>
+                    
+                    <button class="check-answer mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" data-correct="d" data-feedback="Correct! 'Maximum efficiency at all costs' is not one of the core principles of ethical AI. The core principles include fairness, transparency, privacy, accountability, human oversight, and sustainability.">
+                        Check Answer
+                    </button>
+                </div>
+                
+                <!-- Question 2 -->
+                <div class="question hidden" id="q2">
+                    <h3 class="text-lg font-semibold mb-3">Question 2: AI Bias</h3>
+                    <p class="mb-4">Which type of bias occurs when AI systems perform differently for different demographic groups?</p>
+                    
+                    <div class="options">
+                        <div class="option" data-value="a">
+                            <strong>A.</strong> Confirmation bias
+                        </div>
+                        <div class="option" data-value="b">
+                            <strong>B.</strong> Disparate impact
+                        </div>
+                        <div class="option" data-value="c">
+                            <strong>C.</strong> Selection bias
+                        </div>
+                        <div class="option" data-value="d">
+                            <strong>D.</strong> Anchoring bias
+                        </div>
+                    </div>
+                    
+                    <div class="feedback hidden mt-4 p-3 rounded-lg"></div>
+                    
+                    <button class="check-answer mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" data-correct="b" data-feedback="Correct! Disparate impact refers to when AI systems perform differently for different demographic groups, even if this wasn't the intention of the designers. This is a key concern in AI ethics.">
+                        Check Answer
+                    </button>
+                </div>
+                
+                <!-- Question 3 -->
+                <div class="question hidden" id="q3">
+                    <h3 class="text-lg font-semibold mb-3">Question 3: AI Environmental Impact</h3>
+                    <p class="mb-4">Which of the following is a significant environmental impact of large AI models?</p>
+                    
+                    <div class="options">
+                        <div class="option" data-value="a">
+                            <strong>A.</strong> High energy consumption and carbon emissions
+                        </div>
+                        <div class="option" data-value="b">
+                            <strong>B.</strong> Depletion of the ozone layer
+                        </div>
+                        <div class="option" data-value="c">
+                            <strong>C.</strong> Ocean acidification
+                        </div>
+                        <div class="option" data-value="d">
+                            <strong>D.</strong> Soil erosion
+                        </div>
+                    </div>
+                    
+                    <div class="feedback hidden mt-4 p-3 rounded-lg"></div>
+                    
+                    <button class="check-answer mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" data-correct="a" data-feedback="Correct! Training and running large AI models requires significant computational resources, leading to high energy consumption and associated carbon emissions. This is a major environmental concern with AI systems.">
+                        Check Answer
+                    </button>
+                </div>
+                
+                <!-- Question 4 -->
+                <div class="question hidden" id="q4">
+                    <h3 class="text-lg font-semibold mb-3">Question 4: Water Usage in AI</h3>
+                    <p class="mb-4">How does AI development and deployment impact water resources?</p>
+                    
+                    <div class="options">
+                        <div class="option" data-value="a">
+                            <strong>A.</strong> AI has no significant impact on water resources
+                        </div>
+                        <div class="option" data-value="b">
+                            <strong>B.</strong> AI primarily affects water quality but not quantity
+                        </div>
+                        <div class="option" data-value="c">
+                            <strong>C.</strong> Data centers used for AI require significant water for cooling systems
+                        </div>
+                        <div class="option" data-value="d">
+                            <strong>D.</strong> AI reduces overall water consumption through optimization
+                        </div>
+                    </div>
+                    
+                    <div class="feedback hidden mt-4 p-3 rounded-lg"></div>
+                    
+                    <button class="check-answer mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" data-correct="c" data-feedback="Correct! Data centers that power AI systems require significant amounts of water for cooling systems. A single large data center can use millions of gallons of water annually, which is a substantial environmental impact.">
+                        Check Answer
+                    </button>
+                </div>
+                
+                <!-- Question 5 -->
+                <div class="question hidden" id="q5">
+                    <h3 class="text-lg font-semibold mb-3">Question 5: Privacy in AI</h3>
+                    <p class="mb-4">Which of the following is a key privacy concern with AI systems in educational settings?</p>
+                    
+                    <div class="options">
+                        <div class="option" data-value="a">
+                            <strong>A.</strong> Collection of student data without informed consent
+                        </div>
+                        <div class="option" data-value="b">
+                            <strong>B.</strong> Excessive use of paper for printing AI reports
+                        </div>
+                        <div class="option" data-value="c">
+                            <strong>C.</strong> Increased electricity costs for schools
+                        </div>
+                        <div class="option" data-value="d">
+                            <strong>D.</strong> Reduced need for physical textbooks
+                        </div>
+                    </div>
+                    
+                    <div class="feedback hidden mt-4 p-3 rounded-lg"></div>
+                    
+                    <button class="check-answer mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" data-correct="a" data-feedback="Correct! Collection of student data without informed consent is a significant privacy concern with AI systems in educational settings. This includes issues around data collection, storage, sharing, and the potential for surveillance.">
+                        Check Answer
+                    </button>
+                </div>
+                
+                <!-- Question 6 -->
+                <div class="question hidden" id="q6">
+                    <h3 class="text-lg font-semibold mb-3">Question 6: Responsible AI Integration</h3>
+                    <p class="mb-4">Which component of the ETHICS framework for AI integration focuses on involving diverse perspectives in planning and implementation?</p>
+                    
+                    <div class="options">
+                        <div class="option" data-value="a">
+                            <strong>A.</strong> Evaluate Needs and Context
+                        </div>
+                        <div class="option" data-value="b">
+                            <strong>B.</strong> Transparent Governance
+                        </div>
+                        <div class="option" data-value="c">
+                            <strong>C.</strong> Human-Centered Design
+                        </div>
+                        <div class="option" data-value="d">
+                            <strong>D.</strong> Inclusive Stakeholder Engagement
+                        </div>
+                    </div>
+                    
+                    <div class="feedback hidden mt-4 p-3 rounded-lg"></div>
+                    
+                    <button class="check-answer mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" data-correct="d" data-feedback="Correct! The 'I' in the ETHICS framework stands for Inclusive Stakeholder Engagement, which emphasizes the importance of involving diverse perspectives in AI planning and implementation.">
+                        Check Answer
+                    </button>
+                </div>
+                
+                <!-- Question 7 -->
+                <div class="question hidden" id="q7">
+                    <h3 class="text-lg font-semibold mb-3">Question 7: AI Governance</h3>
+                    <p class="mb-4">Which of the following is NOT typically a key component of AI governance structures in higher education?</p>
+                    
+                    <div class="options">
+                        <div class="option" data-value="a">
+                            <strong>A.</strong> AI Ethics Committee
+                        </div>
+                        <div class="option" data-value="b">
+                            <strong>B.</strong> AI Review Process
+                        </div>
+                        <div class="option" data-value="c">
+                            <strong>C.</strong> Centralized AI Development Team
+                        </div>
+                        <div class="option" data-value="d">
+                            <strong>D.</strong> Feedback Channels
+                        </div>
+                    </div>
+                    
+                    <div class="feedback hidden mt-4 p-3 rounded-lg"></div>
+                    
+                    <button class="check-answer mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" data-correct="c" data-feedback="Correct! While some institutions may have AI development teams, a Centralized AI Development Team is not typically considered a core component of AI governance structures, which focus more on oversight, policy development, and review processes.">
+                        Check Answer
+                    </button>
+                </div>
+                
+                <!-- Question 8 -->
+                <div class="question hidden" id="q8">
+                    <h3 class="text-lg font-semibold mb-3">Question 8: Sustainable AI</h3>
+                    <p class="mb-4">Which of the following is an effective strategy for reducing the environmental impact of AI systems?</p>
+                    
+                    <div class="options">
+                        <div class="option" data-value="a">
+                            <strong>A.</strong> Always using the largest available models for maximum accuracy
+                        </div>
+                        <div class="option" data-value="b">
+                            <strong>B.</strong> Model optimization and right-sizing for specific tasks
+                        </div>
+                        <div class="option" data-value="c">
+                            <strong>C.</strong> Running AI systems exclusively during peak electricity demand
+                        </div>
+                        <div class="option" data-value="d">
+                            <strong>D.</strong> Duplicating AI systems across multiple data centers for redundancy
+                        </div>
+                    </div>
+                    
+                    <div class="feedback hidden mt-4 p-3 rounded-lg"></div>
+                    
+                    <button class="check-answer mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" data-correct="b" data-feedback="Correct! Model optimization and right-sizing for specific tasks is an effective strategy for reducing the environmental impact of AI systems. This involves using the smallest model that can effectively perform the required task, rather than defaulting to the largest available models.">
+                        Check Answer
+                    </button>
+                </div>
+                
+                <!-- Question 9 -->
+                <div class="question hidden" id="q9">
+                    <h3 class="text-lg font-semibold mb-3">Question 9: AI Ethics Action Plan</h3>
+                    <p class="mb-4">Which of the following is NOT typically a component of an AI ethics action plan?</p>
+                    
+                    <div class="options">
+                        <div class="option" data-value="a">
+                            <strong>A.</strong> Vision and Principles
+                        </div>
+                        <div class="option" data-value="b">
+                            <strong>B.</strong> Governance Structure
+                        </div>
+                        <div class="option" data-value="c">
+                            <strong>C.</strong> Technical Development Roadmap
+                        </div>
+                        <div class="option" data-value="d">
+                            <strong>D.</strong> Monitoring and Evaluation
+                        </div>
+                    </div>
+                    
+                    <div class="feedback hidden mt-4 p-3 rounded-lg"></div>
+                    
+                    <button class="check-answer mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" data-correct="c" data-feedback="Correct! While an AI ethics action plan may include implementation timelines and processes, a detailed Technical Development Roadmap is typically part of the technical implementation plan rather than the ethics action plan itself.">
+                        Check Answer
+                    </button>
+                </div>
+                
+                <!-- Question 10 -->
+                <div class="question hidden" id="q10">
+                    <h3 class="text-lg font-semibold mb-3">Question 10: AI Ethics in Higher Education</h3>
+                    <p class="mb-4">Which approach to AI ethics in higher education is most effective according to the course?</p>
+                    
+                    <div class="options">
+                        <div class="option" data-value="a">
+                            <strong>A.</strong> Prohibiting all AI use to avoid ethical concerns
+                        </div>
+                        <div class="option" data-value="b">
+                            <strong>B.</strong> Allowing unrestricted AI use to maximize innovation
+                        </div>
+                        <div class="option" data-value="c">
+                            <strong>C.</strong> Implementing comprehensive governance with stakeholder engagement
+                        </div>
+                        <div class="option" data-value="d">
+                            <strong>D.</strong> Delegating all AI ethics decisions to IT departments
+                        </div>
+                    </div>
+                    
+                    <div class="feedback hidden mt-4 p-3 rounded-lg"></div>
+                    
+                    <button class="check-answer mt-4 px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800" data-correct="c" data-feedback="Correct! Implementing comprehensive governance with stakeholder engagement is the most effective approach to AI ethics in higher education. This balanced approach allows for innovation while ensuring ethical considerations are addressed through proper oversight and inclusive decision-making.">
+                        Check Answer
+                    </button>
+                </div>
+                
+                <!-- Results -->
+                <div id="results" class="hidden">
+                    <h2 class="text-2xl font-bold mb-4">Knowledge Check Results</h2>
+                    
+                    <div id="score-container" class="bg-purple-50 p-6 rounded-lg mb-6">
+                        <h3 class="text-xl font-semibold mb-2">Your Score</h3>
+                        <div class="text-4xl font-bold text-purple-800 mb-4" id="final-score">0/10</div>
+                        <div class="mb-4" id="score-message"></div>
+                        <div class="progress-bar mb-4">
+                            <div class="progress-fill" id="final-progress-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <button id="retry-quiz" class="px-6 py-3 bg-purple-700 text-white rounded-lg hover:bg-purple-800">
+                            Retry Quiz
+                        </button>
+                        <a href="interactive.html" class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700">
+                            Back to Interactive Elements
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About This Course</h3>
+                    <p class="text-gray-300">
+                        This AI Ethics micro-credential course was developed for the University of St. Thomas to provide faculty and staff with essential knowledge and tools for ethical AI implementation.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-white">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-white">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-300">
+                        University of St. Thomas<br>
+                        2115 Summit Avenue<br>
+                        St. Paul, MN 55105<br>
+                        <a href="mailto:aiethics@stthomas.edu" class="hover:text-white">aiethics@stthomas.edu</a>
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 University of St. Thomas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentQuestion = 1;
+            let totalQuestions = 10;
+            let score = 0;
+            let answeredQuestions = 0;
+            
+            // Add event listeners to all check answer buttons
+            document.querySelectorAll('.check-answer').forEach(button => {
+                button.addEventListener('click', function() {
+                    const questionDiv = this.closest('.question');
+                    const selectedOption = questionDiv.querySelector('.option.selected');
+                    const feedbackDiv = questionDiv.querySelector('.feedback');
+                    const correctAnswer = this.getAttribute('data-correct');
+                    const feedbackText = this.getAttribute('data-feedback');
+                    
+                    if (!selectedOption) {
+                        feedbackDiv.textContent = "Please select an answer.";
+                        feedbackDiv.classList.remove('hidden', 'bg-green-100', 'bg-red-100');
+                        feedbackDiv.classList.add('bg-yellow-100', 'text-yellow-800');
+                        return;
+                    }
+                    
+                    const selectedValue = selectedOption.getAttribute('data-value');
+                    
+                    // Disable further selection
+                    questionDiv.querySelectorAll('.option').forEach(opt => {
+                        opt.style.pointerEvents = 'none';
+                    });
+                    
+                    // Show feedback
+                    feedbackDiv.classList.remove('hidden');
+                    
+                    if (selectedValue === correctAnswer) {
+                        // Correct answer
+                        questionDiv.classList.add('correct');
+                        selectedOption.classList.add('correct');
+                        feedbackDiv.textContent = feedbackText;
+                        feedbackDiv.classList.add('bg-green-100', 'text-green-800');
+                        score++;
+                    } else {
+                        // Incorrect answer
+                        questionDiv.classList.add('incorrect');
+                        selectedOption.classList.add('incorrect');
+                        
+                        // Highlight the correct answer
+                        questionDiv.querySelector(`.option[data-value="${correctAnswer}"]`).classList.add('correct');
+                        
+                        feedbackDiv.textContent = "Incorrect. " + feedbackText;
+                        feedbackDiv.classList.add('bg-red-100', 'text-red-800');
+                    }
+                    
+                    // Disable the check answer button
+                    this.disabled = true;
+                    this.classList.add('opacity-50', 'cursor-not-allowed');
+                    
+                    // Add a next button if not the last question
+                    if (currentQuestion < totalQuestions) {
+                        const nextButton = document.createElement('button');
+                        nextButton.textContent = 'Next Question';
+                        nextButton.classList.add('next-question', 'ml-4', 'px-4', 'py-2', 'bg-blue-600', 'text-white', 'rounded', 'hover:bg-blue-700');
+                        this.parentNode.appendChild(nextButton);
+                        
+                        nextButton.addEventListener('click', function() {
+                            // Hide current question
+                            document.getElementById(`q${currentQuestion}`).classList.add('hidden');
+                            
+                            // Show next question
+                            currentQuestion++;
+                            document.getElementById(`q${currentQuestion}`).classList.remove('hidden');
+                            
+                            // Update progress
+                            updateProgress();
+                        });
+                    } else {
+                        // If last question, add a show results button
+                        const resultsButton = document.createElement('button');
+                        resultsButton.textContent = 'Show Results';
+                        resultsButton.classList.add('show-results', 'ml-4', 'px-4', 'py-2', 'bg-blue-600', 'text-white', 'rounded', 'hover:bg-blue-700');
+                        this.parentNode.appendChild(resultsButton);
+                        
+                        resultsButton.addEventListener('click', function() {
+                            // Hide all questions
+                            document.querySelectorAll('.question').forEach(q => {
+                                q.classList.add('hidden');
+                            });
+                            
+                            // Show results
+                            showResults();
+                        });
+                    }
+                    
+                    answeredQuestions++;
+                    updateProgress();
+                });
+            });
+            
+            // Add event listeners to all options
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options in this question
+                    const questionDiv = this.closest('.question');
+                    questionDiv.querySelectorAll('.option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                });
+            });
+            
+            // Add event listener to retry button
+            document.getElementById('retry-quiz').addEventListener('click', function() {
+                resetQuiz();
+            });
+            
+            function updateProgress() {
+                const progressPercentage = (answeredQuestions / totalQuestions) * 100;
+                document.getElementById('progress-fill').style.width = `${progressPercentage}%`;
+                document.getElementById('score-display').textContent = `Score: ${score}/${answeredQuestions}`;
+            }
+            
+            function showResults() {
+                document.getElementById('results').classList.remove('hidden');
+                document.getElementById('final-score').textContent = `${score}/${totalQuestions}`;
+                
+                const percentage = (score / totalQuestions) * 100;
+                document.getElementById('final-progress-fill').style.width = `${percentage}%`;
+                
+                let message = '';
+                if (percentage >= 80) {
+                    message = 'Excellent! You have a strong understanding of AI ethics concepts.';
+                    document.getElementById('score-message').classList.add('text-green-700');
+                } else if (percentage >= 60) {
+                    message = 'Good job! You have a solid grasp of AI ethics, but there\'s room for improvement.';
+                    document.getElementById('score-message').classList.add('text-blue-700');
+                } else {
+                    message = 'You might want to review the course materials to strengthen your understanding of AI ethics concepts.';
+                    document.getElementById('score-message').classList.add('text-red-700');
+                }
+                
+                document.getElementById('score-message').textContent = message;
+            }
+            
+            function resetQuiz() {
+                // Reset variables
+                currentQuestion = 1;
+                score = 0;
+                answeredQuestions = 0;
+                
+                // Hide results
+                document.getElementById('results').classList.add('hidden');
+                
+                // Reset all questions
+                document.querySelectorAll('.question').forEach((q, index) => {
+                    // Reset question state
+                    q.classList.remove('correct', 'incorrect');
+                    
+                    // Reset options
+                    q.querySelectorAll('.option').forEach(opt => {
+                        opt.classList.remove('selected', 'correct', 'incorrect');
+                        opt.style.pointerEvents = 'auto';
+                    });
+                    
+                    // Reset feedback
+                    const feedback = q.querySelector('.feedback');
+                    feedback.classList.add('hidden');
+                    feedback.classList.remove('bg-green-100', 'bg-red-100', 'bg-yellow-100', 'text-green-800', 'text-red-800', 'text-yellow-800');
+                    
+                    // Reset button
+                    const checkButton = q.querySelector('.check-answer');
+                    checkButton.disabled = false;
+                    checkButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                    
+                    // Remove next/results buttons
+                    const nextButton = q.querySelector('.next-question');
+                    if (nextButton) nextButton.remove();
+                    
+                    const resultsButton = q.querySelector('.show-results');
+                    if (resultsButton) resultsButton.remove();
+                    
+                    // Show only first question
+                    if (index === 0) {
+                        q.classList.remove('hidden');
+                    } else {
+                        q.classList.add('hidden');
+                    }
+                });
+                
+                // Reset progress
+                updateProgress();
+            }
+            
+            // Initialize
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

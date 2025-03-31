@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3: AI Sustainability and Environmental Impact - University of St. Thomas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-purple-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://www.stthomas.edu/media/universityrelations/graphics/logos/ustwordmark/UST-Wordmark-Primary-Purple.png" alt="University of St. Thomas Logo" class="h-10 mr-3">
+                    <div>
+                        <h1 class="text-2xl font-bold">AI Ethics Course</h1>
+                        <p class="text-sm">75-Minute Micro-Credential</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="hover:text-purple-200">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-purple-200">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-purple-200">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-purple-200">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-purple-200">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="md:col-span-1">
+                <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                    <h3 class="text-xl font-bold mb-4 text-purple-800">Module Navigation</h3>
+                    <ul class="space-y-2">
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module1.html" class="block">Module 1: AI Ethics Foundations</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module2.html" class="block">Module 2: AI Risks, Biases, and Privacy</a>
+                        </li>
+                        <li class="bg-purple-100 rounded p-2 font-semibold">
+                            <a href="module3.html" class="block">Module 3: AI Sustainability and Environmental Impact</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module4.html" class="block">Module 4: Responsible AI Integration</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded p-2">
+                            <a href="module5.html" class="block">Module 5: Creating an AI Ethics Action Plan</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                    <h3 class="text-lg font-semibold mb-2">Module Resources</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a 
+                                href="https://www.weforum.org/stories/2025/03/can-ai-foster-sustainability/" 
+                                target="_blank"
+                                class="text-blue-600 hover:underline flex items-center"
+                            >
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                                WEF: AI and Sustainability
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="https://news.mit.edu/2025/explained-generative-ai-environmental-impact-0117" 
+                                target="_blank"
+                                class="text-blue-600 hover:underline flex items-center"
+                            >
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                                MIT: Gen AI Environmental Impact
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="https://beyondfossilfuels.org/2025/02/07/within-bounds-limiting-ais-environmental-impact/" 
+                                target="_blank"
+                                class="text-blue-600 hover:underline flex items-center"
+                            >
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                                Limiting AI's Environmental Impact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="md:col-span-3">
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h1 class="text-3xl font-bold mb-2">Module 3: AI Sustainability and Environmental Impact</h1>
+                    <div class="text-sm text-gray-500 mb-4">Estimated time: 15 minutes</div>
+                    
+                    <div class="mb-6">
+                        <h2 class="text-xl font-semibold mb-2">Learning Objectives</h2>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Understand the environmental footprint of AI systems, including energy consumption and carbon emissions</li>
+                            <li>Recognize the water usage implications of large AI data centers</li>
+                            <li>Identify strategies for implementing more sustainable AI practices</li>
+                            <li>Evaluate the trade-offs between AI capabilities and environmental impacts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4">AI's Environmental Footprint</h2>
+                        
+                        <p class="mb-4">
+                            As artificial intelligence becomes increasingly integrated into higher education, it's essential to understand the environmental implications of these powerful technologies. The environmental impact of AI extends far beyond the electricity used to power computers and includes significant resource consumption throughout the AI lifecycle.
+                        </p>
+                        
+                        <div class="my-6">
+                            <div class="aspect-w-16 aspect-h-9">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/0OGXr3qQlm4" title="The Hidden Environmental Costs of AI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-64 rounded"></iframe>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-2">An exploration of the environmental impacts of training and deploying large AI models</p>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Energy Consumption and Carbon Emissions</h3>
+                        
+                        <p class="mb-4">
+                            AI systems, particularly large language models and deep learning systems, require substantial computational resources:
+                        </p>
+                        
+                        <div class="mb-6">
+                            <img src="https://www.stthomas.edu/media/centerforenvironmentalstudies/AI-Energy-Consumption.jpg" alt="AI Energy Consumption" class="w-full rounded-lg">
+                            <p class="text-sm text-gray-500 mt-2">Energy consumption comparison of AI training and usage</p>
+                        </div>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Training Phase Impact</h4>
+                                <p>
+                                    The training of large AI models requires enormous computational resources. For example, training a single large language model like GPT-4 can consume as much electricity as hundreds of U.S. homes use in an entire year. This translates to a carbon footprint equivalent to the lifetime emissions of multiple cars.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Inference Phase Impact</h4>
+                                <p>
+                                    Even after training, running AI models for everyday use (inference) continues to consume significant energy. While less intensive than training, the cumulative impact of millions of daily queries to AI systems creates a substantial ongoing environmental footprint.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Data Center Requirements</h4>
+                                <p>
+                                    AI systems typically run in large data centers that require not only electricity for computing but also extensive cooling systems to prevent overheating. These facilities often operate 24/7 and can consume as much electricity as small towns.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Water Usage</h3>
+                        
+                        <p class="mb-4">
+                            A less discussed but equally important environmental impact of AI is water consumption:
+                        </p>
+                        
+                        <div class="mb-6">
+                            <img src="https://www.stthomas.edu/media/centerforenvironmentalstudies/AI-Water-Usage.jpg" alt="AI Water Usage" class="w-full rounded-lg">
+                            <p class="text-sm text-gray-500 mt-2">Water consumption in AI data centers</p>
+                        </div>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Cooling Systems</h4>
+                                <p>
+                                    Data centers use water-intensive cooling systems to maintain optimal operating temperatures for AI hardware. A single large data center can use millions of gallons of water annually for cooling purposes.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-teal-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Regional Water Stress</h4>
+                                <p>
+                                    Many data centers are located in regions already experiencing water scarcity, potentially exacerbating local water stress. The competition for water resources between data centers and local communities raises important ethical questions.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Electricity Generation</h4>
+                                <p>
+                                    Beyond direct usage, water is also consumed in the generation of electricity that powers AI systems. Hydroelectric, nuclear, and many thermal power plants require substantial water resources to operate.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Carbon Footprint Across the AI Lifecycle</h3>
+                        
+                        <p class="mb-4">
+                            The environmental impact of AI extends throughout its lifecycle:
+                        </p>
+                        
+                        <div class="mb-6">
+                            <img src="https://www.stthomas.edu/media/centerforenvironmentalstudies/AI-Carbon-Footprint.jpg" alt="AI Carbon Footprint" class="w-full rounded-lg">
+                            <p class="text-sm text-gray-500 mt-2">Carbon emissions across the AI lifecycle</p>
+                        </div>
+                        
+                        <div class="overflow-x-auto mb-6">
+                            <table class="min-w-full bg-white border border-gray-200">
+                                <thead>
+                                    <tr>
+                                        <th class="py-2 px-4 border-b">Lifecycle Stage</th>
+                                        <th class="py-2 px-4 border-b">Environmental Impact</th>
+                                        <th class="py-2 px-4 border-b">Mitigation Strategies</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Hardware Manufacturing</td>
+                                        <td class="py-2 px-4 border-b">Resource extraction, manufacturing emissions, e-waste</td>
+                                        <td class="py-2 px-4 border-b">Extend hardware lifecycles, responsible recycling programs</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Data Collection & Storage</td>
+                                        <td class="py-2 px-4 border-b">Energy for data centers, cooling requirements</td>
+                                        <td class="py-2 px-4 border-b">Data minimization, efficient storage architectures</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Model Training</td>
+                                        <td class="py-2 px-4 border-b">Intensive computation, high energy consumption</td>
+                                        <td class="py-2 px-4 border-b">Efficient algorithms, renewable energy sources</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Deployment & Inference</td>
+                                        <td class="py-2 px-4 border-b">Ongoing energy use, scaling impacts</td>
+                                        <td class="py-2 px-4 border-b">Model compression, edge computing where appropriate</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Maintenance & Updates</td>
+                                        <td class="py-2 px-4 border-b">Retraining costs, continuous operation</td>
+                                        <td class="py-2 px-4 border-b">Incremental updates, transfer learning techniques</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Strategies for Sustainable AI</h3>
+                        
+                        <p class="mb-4">
+                            Higher education institutions can implement several strategies to reduce the environmental impact of AI:
+                        </p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h4 class="font-semibold mb-1">Right-Sizing AI Solutions</h4>
+                                <p>
+                                    Choose the smallest model that meets performance requirements rather than defaulting to the largest available models. For many educational applications, smaller, more efficient models can provide excellent results with a fraction of the environmental impact.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold mb-1">Green Computing Infrastructure</h4>
+                                <p>
+                                    When possible, run AI workloads in data centers powered by renewable energy. Many cloud providers now offer options to prioritize regions with lower carbon intensity.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold mb-1">Efficient Algorithms</h4>
+                                <p>
+                                    Implement techniques like model distillation, pruning, and quantization to create more efficient versions of AI models that require less computational resources while maintaining acceptable performance.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-yellow-500 pl-4">
+                                <h4 class="font-semibold mb-1">Shared Resources</h4>
+                                <p>
+                                    Utilize shared computing resources and pre-trained models rather than training new models from scratch whenever possible. Collaborative approaches can significantly reduce redundant computational work.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-red-500 pl-4">
+                                <h4 class="font-semibold mb-1">Environmental Impact Assessment</h4>
+                                <p>
+                                    Before implementing new AI systems, conduct an environmental impact assessment that considers energy use, water consumption, and carbon emissions throughout the AI lifecycle.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3">Balancing Benefits and Impacts</h3>
+                        
+                        <p class="mb-4">
+                            When implementing AI in higher education, it's important to weigh environmental impacts against potential benefits:
+                        </p>
+                        
+                        <div class="bg-gray-50 p-5 rounded-lg mb-6">
+                            <h4 class="font-semibold mb-3">Considerations for Sustainable AI Implementation</h4>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <h5 class="font-medium mb-2">Questions to Ask</h5>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Does this application truly require AI, or could simpler technology suffice?</li>
+                                        <li>Is the environmental cost justified by the educational benefit?</li>
+                                        <li>Can we implement this AI solution in a more sustainable way?</li>
+                                        <li>Have we considered the full lifecycle environmental impact?</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-2">Potential Trade-offs</h5>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Model accuracy vs. computational efficiency</li>
+                                        <li>Real-time processing vs. batch processing</li>
+                                        <li>Local computation vs. cloud-based solutions</li>
+                                        <li>Custom models vs. pre-trained models</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                            <h4 class="font-semibold mb-2">Case Example: Virtual Labs with AI Simulation</h4>
+                            <p class="mb-3">
+                                A university is considering implementing AI-powered virtual labs to reduce the need for physical lab equipment and chemicals. While the AI simulations would require significant computational resources, they could potentially reduce material waste and allow more students to access lab experiences remotely.
+                            </p>
+                            <p>
+                                <strong>Sustainability Analysis:</strong> This case requires balancing the environmental impact of AI computation against the reduced material consumption and potential educational benefits. A comprehensive assessment would consider factors like the energy efficiency of the AI system, the number of students served, the reduction in physical resources, and whether the learning outcomes are comparable to traditional labs.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4">Module Assessment</h2>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-4">Knowledge Check</h3>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <p class="font-medium mb-2">1. Which phase of AI development typically consumes the most energy?</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1a" name="q1" class="mr-2">
+                                            <label for="q1a">Initial data collection</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1b" name="q1" class="mr-2">
+                                            <label for="q1b">Model training</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1c" name="q1" class="mr-2">
+                                            <label for="q1c">Inference (everyday use)</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q1d" name="q1" class="mr-2">
+                                            <label for="q1d">Model updating</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-500">
+                                        Correct Answer: Model training. The initial training of large AI models requires enormous computational resources and is typically the most energy-intensive phase of AI development.
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <p class="font-medium mb-2">2. Which of the following is NOT a significant environmental impact of AI systems?</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2a" name="q2" class="mr-2">
+                                            <label for="q2a">Carbon emissions from electricity consumption</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2b" name="q2" class="mr-2">
+                                            <label for="q2b">Water usage for cooling data centers</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2c" name="q2" class="mr-2">
+                                            <label for="q2c">Soil contamination from AI operations</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q2d" name="q2" class="mr-2">
+                                            <label for="q2d">E-waste from hardware manufacturing and disposal</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-500">
+                                        Correct Answer: Soil contamination from AI operations. While AI systems do have significant environmental impacts including carbon emissions, water usage, and e-waste, they do not typically cause direct soil contamination.
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <p class="font-medium mb-2">3. Which strategy would be most effective for reducing the environmental impact of an AI system used for student writing feedback?</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3a" name="q3" class="mr-2">
+                                            <label for="q3a">Using the largest, most accurate model available</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3b" name="q3" class="mr-2">
+                                            <label for="q3b">Training a custom model from scratch for your specific institution</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3c" name="q3" class="mr-2">
+                                            <label for="q3c">Using a smaller, optimized model that meets performance requirements</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="q3d" name="q3" class="mr-2">
+                                            <label for="q3d">Running the system 24/7 to maximize availability</label>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-500">
+                                        Correct Answer: Using a smaller, optimized model that meets performance requirements. Right-sizing AI solutions by choosing the smallest model that meets performance requirements is one of the most effective ways to reduce environmental impact.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <button class="px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800">Submit Answers</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8 pt-4 border-t border-gray-200">
+                        <a 
+                            href="module2.html" 
+                            class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 flex items-center"
+                        >
+                            <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                            </svg>
+                            Previous Module
+                        </a>
+                        <a 
+                            href="module4.html" 
+                            class="px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800 flex items-center"
+                        >
+                            Next Module
+                            <svg class="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About This Course</h3>
+                    <p class="text-gray-300">
+                        This AI Ethics micro-credential course was developed for the University of St. Thomas to provide faculty and staff with essential knowledge and tools for ethical AI implementation.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="modules.html" class="hover:text-white">Modules</a></li>
+                        <li><a href="interactive.html" class="hover:text-white">Interactive Elements</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-300">
+                        University of St. Thomas<br>
+                        2115 Summit Avenue<br>
+                        St. Paul, MN 55105<br>
+                        <a href="mailto:aiethics@stthomas.edu" class="hover:text-white">aiethics@stthomas.edu</a>
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 University of St. Thomas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
